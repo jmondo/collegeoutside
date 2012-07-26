@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title><%= yield(:title) %></title>
+
+    <meta name="description" content="<%= yield(:description) || "PROJECT DESCRIPTION" %>" />
+    <meta name="keywords" content="<%= yield(:keywords) || "PROJECT KEYWORDS" %>" />
+    <%= csrf_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <!--[if lte IE 7]><%= stylesheet_link_tag "ie7" %><![endif]-->
+
+    <%= yield :extra_header %>
+  </head>
+  <body class="<%= body_class %>">
+    <%= render :partial => 'layouts/flashes' -%>
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%= yield :extra_footer %>
+  </body>
+</html>

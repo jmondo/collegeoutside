@@ -1,0 +1,19 @@
+ # PostgreSQL. Versions 7.4 and 8.x are supported.
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: collegeoutside_development
+  pool: 5
+  username:
+  password:
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: collegeoutside_test
+  pool: 5
+  username:
+  password:
+

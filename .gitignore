@@ -1,0 +1,15 @@
+
+.bundle
+log/*.log
+/log/*.pid
+tmp/*
+/coverage/*
+public/system/*
+public/stylesheets/compiled/*
+config/database.yml
+db/*.sqlite3
+db/structure.sql
+*.swp
+*.swo
+.DS_Store
+**/.DS_STORE
