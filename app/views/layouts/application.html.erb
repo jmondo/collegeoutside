@@ -51,6 +51,13 @@
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
+            <ul class="nav pull-right">
+              <% if current_user %>
+                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <% else %>
+                <li><%= link_to "Sign in", new_user_session_path %></li>
+              <% end %>
+            </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -60,6 +67,7 @@
       <div class="content">
         <div class="row">
            <div class="span9">
+              <%= render 'layouts/flashes' %>
               <%= yield %>
             </div>
             <div class="span3">
