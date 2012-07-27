@@ -13,3 +13,18 @@ end
 ["Tufts", "Babson"].each do |school|
   School.find_or_create_by_name!(school)
 end
+
+[
+  "hiking",
+  "running",
+  "skiing",
+  "biking",
+  "climbing",
+  "water",
+  "winter",
+  "camping",
+  "gear",
+  "other"
+].each do |activity|
+  Activity.find_or_create_by_name!(activity)
+end

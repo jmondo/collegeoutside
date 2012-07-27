@@ -3,3 +3,14 @@
 
 en:
   hello: "Hello world"
+  activities:
+    hiking: Hiking
+    running: Running
+    skiing: Downhill Ski/Snowboard
+    biking: Biking
+    climbing: Rock/Ice Climbing
+    water: "Kayak, Rafting, Canoeing, Surfing, Swimming"
+    winter: "Snowshoe, XC Skiing, Skating"
+    camping: Camping
+    gear: Gear
+    other: "Yoga, Stretching, Recovery, Other"
