@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+require 'csv'
+
 ["winter", "spring", "summer", "fall"].each do |season|
   Season.find_or_create_by_name!(season)
 end
@@ -27,4 +29,12 @@ end
   "other"
 ].each do |activity|
   Activity.find_or_create_by_name!(activity)
+end
+
+CSV.foreach(Rails.root.join("db/data_files/states.csv"),
+  headers: true,
+  skip_blanks: true) do |state|
+  State.find_or_create_by_name!(state["Name"]) do |s|
+    s.abbreviation = state["Abbreviation"]
+  end
 end
