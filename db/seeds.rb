@@ -9,3 +9,7 @@
 ["winter", "spring", "summer", "fall"].each do |season|
   Season.find_or_create_by_name!(season)
 end
+
+["Tufts", "Babson"].each do |school|
+  School.find_or_create_by_name!(school)
+end
