@@ -19,4 +19,16 @@ class User < ActiveRecord::Base
     end
   end
 
+  after_create :send_invitation
+
+  protected
+
+  def send_invitation
+    invite!
+  end
+
+  def password_required?
+    invitation_accepted_at.present? && super
+  end
+
 end
