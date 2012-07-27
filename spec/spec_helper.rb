@@ -1,6 +1,5 @@
 
   require 'rubygems'
-  require 'postmaster_general'
 
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
@@ -12,7 +11,6 @@
   require 'database_cleaner'
   require 'shoulda'
   require 'capybara/rspec'
-  PostmasterGeneral.log_directory = Rails.root.join("tmp/rendered_emails")
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.

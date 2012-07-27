@@ -12,4 +12,11 @@ class User < ActiveRecord::Base
   ROLES = ["user", "chief"]
 
   validates_inclusion_of :role, in: ROLES
+
+  ROLES.each do |r|
+    send(:define_method, "#{r}?") do
+      self.role == "#{r}"
+    end
+  end
+
 end

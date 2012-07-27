@@ -1,4 +1,4 @@
 class School < ActiveRecord::Base
-  attr_accessible nil
+  attr_accessible :name
   validates_presence_of :name
 end
