@@ -52,6 +52,9 @@
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
             <ul class="nav pull-right">
+              <% if can? :access, :rails_admin %>
+                <li><%= link_to 'Dashboard', rails_admin_path %></li>
+              <% end %>
               <% if current_user %>
                 <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
               <% else %>

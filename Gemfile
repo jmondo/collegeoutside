@@ -23,6 +23,8 @@ gem 'devise_invitable'
 gem 'configatron'
 gem 'tab_menu'
 gem "twitter-bootstrap-rails"
+gem "rails_admin"
+gem "cancan"
 
 group :development do
   gem 'rspec-rails'
