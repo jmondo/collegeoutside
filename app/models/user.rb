@@ -23,6 +23,14 @@ class User < ActiveRecord::Base
 
   after_create :send_invitation
 
+  def attr_accessible_role
+    if chief?
+      :chief
+    else
+      :default
+    end
+  end
+
   protected
 
   def send_invitation
