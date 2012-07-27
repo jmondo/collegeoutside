@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
   # I18n.default_locale = :de
 
   config.current_user_method { current_user } # auto-generated
-
+  config.attr_accessible_role { _current_user.role.to_sym }
   # If you want to track changes on your models:
   # config.audit_with :history, User
 
