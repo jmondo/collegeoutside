@@ -38,3 +38,14 @@ CSV.foreach(Rails.root.join("db/data_files/states.csv"),
     s.abbreviation = state["Abbreviation"]
   end
 end
+
+[
+  "pacific",
+  "mountain",
+  "southwest",
+  "midwest",
+  "southeast",
+  "northeast"
+].each do |region|
+  Region.find_or_create_by_name!(region)
+end
