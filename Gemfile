@@ -19,6 +19,7 @@ gem 'kaminari'
 gem 'inherited_resources'
 gem 'simple_form'
 gem 'devise'
+gem 'devise_invitable'
 gem 'configatron'
 gem 'tab_menu'
 gem "twitter-bootstrap-rails"
