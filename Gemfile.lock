@@ -34,6 +34,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bluecloth (2.2.0)
     bootstrap-sass (2.0.4.0)
+    bootstrap-wysihtml5-rails (0.2.12)
+      railties (>= 3.0)
     bourbon (2.1.1)
       sass (>= 3.1)
     bourne (1.1.2)
@@ -284,6 +286,7 @@ PLATFORMS
 
 DEPENDENCIES
   bluecloth (~> 2.0)
+  bootstrap-wysihtml5-rails
   bourbon
   bourne
   cancan

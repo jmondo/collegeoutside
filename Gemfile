@@ -25,6 +25,7 @@ gem 'tab_menu'
 gem "twitter-bootstrap-rails"
 gem "rails_admin"
 gem "cancan"
+gem "bootstrap-wysihtml5-rails"
 
 group :development do
   gem 'rspec-rails'
