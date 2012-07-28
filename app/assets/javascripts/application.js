@@ -14,7 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require xhr_fix
 //= require underscore
 //= require_tree .
 
