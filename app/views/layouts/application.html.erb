@@ -17,16 +17,16 @@
         <ul class="nav">
           <% if current_user %>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-
-            <% if current_user.chief? %>
-              <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
-              <li><%= link_to "Writer Dashboard", write_path %></li>
-            <% elsif current_user.writer? %>
-              <li><%= link_to "Writer Dashboard", write_path %></li>
-            <% end %>
-
           <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+
+          <% if can? :access, :rails_admin %>
+            <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
+          <% end %>
+
+          <% if can? :show, :writer_dashboard %>
+            <li><%= link_to "Writer Dashboard", write_path %></li>
           <% end %>
 
         </ul>
