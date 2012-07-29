@@ -8,6 +8,7 @@ class Ability
       can :access, :rails_admin   # grant access to rails_admin
       can :dashboard
     elsif user.writer?
+      can :manage, Article, {user_id: user.id, published_at: nil}
     end
   end
 
