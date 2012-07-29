@@ -9,6 +9,7 @@
   <%= f.association :seasons,
     as: :check_boxes %>
   <%= f.association :activities,
-    as: :check_boxes %>
+    as: :check_boxes,
+    wrapper_html: { class: "inputs-col-3" } %>
   <%= f.submit 'Save' %>
 <% end -%>

@@ -1,3 +1,13 @@
 .input-full-width {
-  width: 100%
+  width: 100%;
+}
+.inputs-col-3 {
+  width: 550px;
+  label {
+    width: 150px;
+    display: inline-block;
+  }
+  span.help-inline {
+    display: block;
+  }
 }
