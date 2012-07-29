@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727044555) do
+ActiveRecord::Schema.define(:version => 20120729193502) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "activities_articles", :id => false, :force => true do |t|
+    t.integer "article_id"
+    t.integer "activity_id"
+  end
+
+  add_index "activities_articles", ["activity_id"], :name => "index_activities_articles_on_activity_id"
+  add_index "activities_articles", ["article_id"], :name => "index_activities_articles_on_article_id"
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id",                         :null => false
@@ -34,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20120727044555) do
   end
 
   add_index "articles", ["published_at"], :name => "index_articles_on_published_at"
+
+  create_table "articles_seasons", :id => false, :force => true do |t|
+    t.integer "article_id"
+    t.integer "season_id"
+  end
+
+  add_index "articles_seasons", ["article_id"], :name => "index_articles_seasons_on_article_id"
+  add_index "articles_seasons", ["season_id"], :name => "index_articles_seasons_on_season_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"

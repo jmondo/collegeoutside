@@ -1,0 +1,9 @@
+<h1>Drafts</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, [:write, article] %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New draft", new_write_article_path %>

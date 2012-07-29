@@ -1,0 +1,14 @@
+<%= simple_form_for [:write, @article] do |f| -%>
+  <%= f.input :title,
+    input_html: { class: "input-full-width" } %>
+  <%= f.input :body,
+    input_html: { class: "input-full-width input-wysihtml5" } %>
+  <%= f.association :region %>
+  <%= f.association :state %>
+  <%= f.association :school %>
+  <%= f.association :seasons,
+    as: :check_boxes %>
+  <%= f.association :activities,
+    as: :check_boxes %>
+  <%= f.submit 'Save' %>
+<% end -%>

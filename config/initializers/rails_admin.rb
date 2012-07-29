@@ -91,6 +91,8 @@ RailsAdmin.config do |config|
       field :region
       field :state
       field :school
+      field :seasons
+      field :activities
       field :featured
       field :sponsored
       field :published_at
