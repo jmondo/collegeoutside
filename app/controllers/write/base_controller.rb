@@ -16,7 +16,7 @@ module Write
     end
 
     def as_role
-      { as: (self.resources_configuration[:self][:role] || current_user.role.to_sym) }
+      { as: (self.resources_configuration[:self][:role] || current_user.try(:role).try(:to_sym)) }
     end
   end
 end
