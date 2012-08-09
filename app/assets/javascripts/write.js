@@ -15,6 +15,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require underscore
-//= require bootstrap-wysihtml5-all
+//= require redactor-rails
 //= require_tree ./write/
 

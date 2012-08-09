@@ -11,6 +11,6 @@
    *
    *= require_self
    *= require bootstrap_and_overrides
-   *= require bootstrap-wysihtml5
+   *= require redactor-rails
    *= require_tree ./write/
   */

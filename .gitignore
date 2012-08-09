@@ -13,3 +13,4 @@ db/structure.sql
 *.swo
 .DS_Store
 **/.DS_STORE
+public/uploads/*

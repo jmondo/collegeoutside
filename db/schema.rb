@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729193502) do
+ActiveRecord::Schema.define(:version => 20120809225025) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -63,6 +63,24 @@ ActiveRecord::Schema.define(:version => 20120729193502) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "redactor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "writer_id"
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], :name => "idx_redactor_assetable"
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_redactor_assetable_type"
+  add_index "redactor_assets", ["writer_id"], :name => "index_redactor_assets_on_writer_id"
 
   create_table "regions", :force => true do |t|
     t.string   "name",       :null => false

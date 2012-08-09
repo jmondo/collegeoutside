@@ -1,3 +1,3 @@
 $(function() {
-  $("#article_body").wysihtml5();
+  $("#article_body").addClass('redactor');
 });
