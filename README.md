@@ -9,5 +9,5 @@ A blog for people who like going outside
     heroku run rake db:setup
     heroku run console
     # create a chief
-    # enter s3 creds
+    heroku config:add AWS_ACCESS_KEY_ID=xxx AWS_SECRET_ACCESS_KEY=yyy
     heroku addons:add sendgrid:starter

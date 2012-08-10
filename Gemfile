@@ -28,6 +28,7 @@ gem "cancan"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'redactor-rails'
+gem 'fog'
 
 group :development do
   gem 'rspec-rails'
