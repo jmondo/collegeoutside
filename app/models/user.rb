@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   ROLES = ["user", "chief", "writer"]
 
   validates_inclusion_of :role, in: ROLES
+  validates_presence_of :name
 
   ROLES.each do |r|
     send(:define_method, "#{r}?") do
