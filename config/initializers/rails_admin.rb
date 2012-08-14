@@ -172,36 +172,31 @@ RailsAdmin.config do |config|
   #   create do; end
   #   update do; end
   # end
-  # config.model User do
-  #   # Found associations:
-  #     configure :invited_by, :polymorphic_association         # Hidden   #   # Found columns:
-  #     configure :id, :integer
-  #     configure :email, :string
-  #     configure :password, :password         # Hidden
-  #     configure :password_confirmation, :password         # Hidden
-  #     configure :reset_password_token, :string         # Hidden
-  #     configure :reset_password_sent_at, :datetime
-  #     configure :remember_created_at, :datetime
-  #     configure :sign_in_count, :integer
-  #     configure :current_sign_in_at, :datetime
-  #     configure :last_sign_in_at, :datetime
-  #     configure :current_sign_in_ip, :string
-  #     configure :last_sign_in_ip, :string
-  #     configure :created_at, :datetime
-  #     configure :updated_at, :datetime
-  #     configure :invitation_token, :string
-  #     configure :invitation_sent_at, :datetime
-  #     configure :invitation_accepted_at, :datetime
-  #     configure :invitation_limit, :integer
-  #     configure :invited_by_id, :integer         # Hidden
-  #     configure :invited_by_type, :string         # Hidden
-  #     configure :role, :string
-  #     configure :name, :string   #   # Sections:
-  #   list do; end
-  #   export do; end
-  #   show do; end
-  #   edit do; end
-  #   create do; end
-  #   update do; end
-  # end
+  config.model User do
+    # Found associations:
+    list do
+      field :id, :integer
+      field :name, :string
+      field :email, :string
+      field :role, :enum
+      field :invited_by, :polymorphic_association
+      field :created_at, :datetime
+      field :invitation_sent_at, :datetime
+      field :invitation_accepted_at, :datetime
+    end
+    export do; end
+    show do; end
+    edit do
+      field :name, :string
+      field :email, :string
+      field :role, :enum
+    end
+    create do
+      field :name, :string
+      field :email, :string
+      field :role, :enum
+    end
+
+    update do; end
+  end
 end

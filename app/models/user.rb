@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
 
   after_create :send_invitation
 
+  def role_enum
+    ROLES
+  end
+
   def attr_accessible_role
     if chief?
       :chief
