@@ -2,6 +2,7 @@ module Write
   class ArticlesController < BaseController
 
     def show
+      flash.keep
       redirect_to edit_resource_path
     end
 
