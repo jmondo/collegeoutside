@@ -4,6 +4,7 @@
   <%= f.input :body,
     input_html: { class: "input-full-width redactor" } %>
   <%= f.association :region %>
+  <%= image_tag 'map.png', alt: 'map of regions' %>
   <%= f.association :state %>
   <%= f.association :school %>
   <%= f.association :seasons,
