@@ -327,6 +327,7 @@ DEPENDENCIES
   guard-livereload
   guard-rspec
   heroku
+  hpricot
   inherited_resources
   jquery-rails
   kaminari

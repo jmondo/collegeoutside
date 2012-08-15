@@ -29,6 +29,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'redactor-rails'
 gem 'fog'
+gem 'hpricot'
 
 group :development do
   gem 'rspec-rails'
