@@ -10,5 +10,13 @@ Collegeoutside::Application.routes.draw do
     resources :articles
   end
 
+  namespace :pages do
+    get 'articles'
+    get 'school'
+    get 'author'
+    get 'article'
+    get 'team'
+  end
+
   root to: 'pages#index'
 end

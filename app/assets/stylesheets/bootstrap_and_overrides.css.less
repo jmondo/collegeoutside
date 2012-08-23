@@ -1,5 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
-body { 
+body {
 	padding-top: 60px;
 }
 
@@ -10,7 +10,7 @@ body {
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
+// Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not
 //       have the proper paths. So for now we use the absolute path.
 @fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
 @fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
@@ -30,3 +30,64 @@ body {
 //
 // Example:
 // @linkColor: #ff0000;
+
+body {
+  margin: 50px 0 20px 0;
+}
+
+/* Special grid styles
+-------------------------------------------------- */
+.show-grid {
+  margin-bottom: 20px;
+}
+.show-grid [class*="span"] {
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  min-height: 200px;
+  line-height: 200px;
+  &.height-half {
+    min-height: 100px;
+    line-height: 100px;
+  }
+  &.height2 {
+    min-height: 400px;
+    line-height: 400px;
+  }
+  &.height3 {
+    min-height: 600px;
+    line-height: 600px;
+  }
+}
+.show-grid .span-parent {
+  background-color: transparent;
+  text-align: center;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  min-height: 200px;
+  line-height: 200px;
+}
+.show-grid:hover [class*="span"] {
+  background: #ddd;
+}
+.show-grid:hover .span-parent {
+  background: transparent;
+}
+.navigation {
+  font-size: 1.5em;
+}
+.footer-bar {
+  min-height: 50px;
+}
+.footer-bar2 {
+  min-height: 200px;
+}
+.dark {
+  background-color: #aaa;
+}
+.light {
+  background-color: #eee;
+}

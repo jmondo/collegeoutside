@@ -12,26 +12,40 @@
   <body>
 
     <div class="container">
+      <div class="row navigation">
+        <div class="span4"><h1>CollegeOutside</h1></div>
+        <div class="span2">Schools</div>
+        <div class="span2">Our Story</div>
+        <div class="span2">All Articles</div>
+        <div class="span2">Contribute</div>
+      </div>
       <%= render 'layouts/flashes' %>
       <div>
-        <ul class="nav">
-          <% if current_user %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
 
-          <% if can? :access, :rails_admin %>
-            <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
-          <% end %>
-
-          <% if can? :show, :writer_dashboard %>
-            <li><%= link_to "Writer Dashboard", write_path %></li>
-          <% end %>
-
-        </ul>
       </div>
       <%= yield %>
+      <div class="row">
+        <div class="span12 dark footer-bar"></div>
+      </div>
+      <div class="row">
+        <div class="span12 light footer-bar2">
+          <ul>
+            <% if current_user %>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+
+            <% if can? :access, :rails_admin %>
+              <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
+            <% end %>
+
+            <% if can? :show, :writer_dashboard %>
+              <li><%= link_to "Writer Dashboard", write_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
     <%= javascript_include_tag "application" %>
     <%= render 'layouts/google_analytics' %>
