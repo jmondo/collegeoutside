@@ -12,5 +12,6 @@
    *= require_self
    *= require bootstrap_and_overrides
    *= require redactor-rails
+   *= require_tree ./redactor/
    *= require_tree ./write/
   */

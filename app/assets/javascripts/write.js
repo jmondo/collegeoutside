@@ -15,6 +15,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require underscore
-//= require redactor-rails
+//= require_tree ./redactor/
 //= require_tree ./write/
-

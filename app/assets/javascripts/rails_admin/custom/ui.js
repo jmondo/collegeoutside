@@ -1,4 +1,3 @@
 /*
-  //= require rails_admin/admin.js
-  //= require redactor-rails
+  //= require admin.js
 */
