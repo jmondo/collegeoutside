@@ -22,6 +22,12 @@ describe Importer::DataImporter do
   end
 
   describe "posts" do
+    it "sets school to default" do
+      importer.import_articles
+      a = Article.order(:created_at).first
+      a.school.name.should eql("Tufts")
+    end
+
     it "imports the post title, body, author" do
       importer.import_articles
       a = Article.order(:created_at).first

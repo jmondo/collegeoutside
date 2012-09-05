@@ -37,7 +37,7 @@ module Importer
       protected
 
       def import_school
-        @@school ||= School.find_or_create_by_name("Import School")
+        @@school ||= School.find_or_create_by_name("Tufts")
       end
 
       def file
