@@ -12,12 +12,14 @@
   <body>
 
     <div class="container">
-      <div class="row navigation">
-        <div class="span4"><h1>CollegeOutside</h1></div>
-        <div class="span2">Schools</div>
-        <div class="span2">Our Story</div>
-        <div class="span2">All Articles</div>
-        <div class="span2">Contribute</div>
+      <div class="row header-nav">
+        <div class="span4 header-nav-logo"><%= link_to image_tag('logo.png'), '/' %></div>
+        <div class="header-nav-links">
+          <div class="span2 header-nav-link"><%= link_to "Schools" %></div>
+          <div class="span2 header-nav-link"><%= link_to "Our Story" %></div>
+          <div class="span2 header-nav-link"><%= link_to "All Articles" %></div>
+          <div class="span2 header-nav-link"><%= link_to "Contribute" %></div>
+        </div>
       </div>
       <%= render 'layouts/flashes' %>
       <div>
@@ -25,29 +27,55 @@
       </div>
       <%= yield %>
       <div class="row">
-        <div class="span12 dark footer-bar"></div>
-      </div>
-      <div class="row">
-        <div class="span12 light footer-bar2">
-          <ul>
-            <% if current_user %>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "Sign in", new_user_session_path %></li>
-            <% end %>
-
-            <% if can? :access, :rails_admin %>
-              <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
-            <% end %>
-
-            <% if can? :show, :writer_dashboard %>
-              <li><%= link_to "Writer Dashboard", write_path %></li>
-            <% end %>
-          </ul>
+        <div class="span12 social-media-bar">
+          <%= social_media_icon('facebook') %>
+          <%= social_media_icon('twitter') %>
+          <%= social_media_icon('vimeo') %>
+          <%= social_media_icon('linkedin') %>
         </div>
       </div>
+      <div class="row footer-bar">
+        <div class='span4 footer-box footer-box-centered'><%= link_to image_tag('logo.png'), '/', class: "logo-medium" %></div>
+        <div class='span4 footer-box footer-box-centered footer-box-vertical-center'>
+          <%= link_to "Write for Your School" %> <br />
+          <%= link_to "Start a CO Branch" %>
+        </div>
+        <div class='span2 footer-box'>
+          <%= link_to "About Us" %><br />
+          <%= link_to "Our Team" %><br />
+          <%= link_to "Jobs" %><br />
+          <%= link_to "Contact Us" %>
+        </div>
+        <div class='span2 footer-box'>
+          <%= link_to "Schools" %><br />
+          <%= link_to "Press" %><br />
+          <%= link_to "Terms of Use" %><br />
+          <%= link_to "Give Us Feedback" %><br />
+        </div>
+      </div>
+      <div class="span12">
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+
+          <% if can? :access, :rails_admin %>
+            <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
+          <% end %>
+
+          <% if can? :show, :writer_dashboard %>
+            <li><%= link_to "Writer Dashboard", write_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
+
+
+
     <%= javascript_include_tag "application" %>
     <%= render 'layouts/google_analytics' %>
   </body>
 </html>
+

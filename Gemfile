@@ -36,13 +36,9 @@ group :development do
 
   gem 'guard'
   gem 'guard-livereload'
-  gem 'guard-rspec'
   gem 'guard-bundler'
 
   gem 'sextant'
-
-  gem 'rb-fsevent'
-  gem 'growl'
 
   gem 'heroku'
 end
