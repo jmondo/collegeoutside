@@ -27,7 +27,7 @@ gem "rails_admin"
 gem "cancan"
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'redactor-rails'
+gem 'redactor-rails' # using only for upload engine
 gem 'fog'
 gem 'hpricot'
 
