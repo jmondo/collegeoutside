@@ -71,12 +71,13 @@
 <% content_for :extra_footer do -%>
   <script type="text/javascript">
     $(function() {
-      var radius = 200;
       var fields = $('.sport-guy'), container = $('.sport-guys'), width = container.width(), height = width;
+      var hRadius = 190;
+      var vRadius = 230;
       var angle = 0, step = (2*Math.PI) / fields.length;
       fields.each(function() {
-          var x = Math.round(width/2 + radius * Math.cos(angle) - $(this).width()/2);
-          var y = Math.round(height/2 + radius * Math.sin(angle) - $(this).height()/2);
+          var x = Math.round(width/2 + vRadius * Math.cos(angle) - $(this).width()/2);
+          var y = Math.round(height/2 + hRadius * Math.sin(angle) - $(this).height()/2);
           if(window.console) {
               console.log($(this).text(), x, y);
           }
