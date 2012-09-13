@@ -170,9 +170,76 @@ body {
   background-color: transparent;
 }
 
+// country map
+$countryMapUrl: url(image-path('country/country-sprite-360.png'));
+.region-map {
+  position: absolute;
+  top: 190px;
+  left: 95px;
+  width: 360px;
+  height: 203px;
+  background-image:$countryMapUrl;
+  background-position: 0 0;
+}
 
-.sport-guy-climbing {
+.region {
+  position: absolute;
+}
+.region:hover {
+  background-image:$countryMapUrl;
+}
 
+@mixin region-position($left, $top, $bgLeft, $bgTop) {
+  top: $top;
+  left: $left;
+  &:hover {
+    background-position: ($bgLeft - $left) ($bgTop - $top);
+  }
+}
+
+// #brown 2
+$brown2Top:-214px;
+$brown2Left:0px;
+
+.region-northeast {
+  height: 77px;
+  width: 68px;
+  @include region-position(292px, 15px, $brown2Left, $brown2Top)
+}
+
+.region-southeast {
+  height: 100px;
+  width: 104px;
+  @include region-position(225px, 93px, $brown2Left, $brown2Top)
+}
+
+.region-west {
+  height: 90px;
+  width: 90px;
+  @include region-position(75px, 25px, $brown2Left, $brown2Top)
+}
+
+// #brown 1
+
+$brown1Top:0px;
+$brown1Left:-371px;
+
+.region-southwest {
+  height: 75px;
+  width: 120px;
+  @include region-position(100px, 120px, $brown1Left, $brown1Top)
+}
+
+.region-midwest {
+  height: 90px;
+  width: 120px;
+  @include region-position(167px, 30px, $brown1Left, $brown1Top)
+}
+
+.region-pacific {
+  height: 165px;
+  width: 80px;
+  @include region-position(5px, 10px, $brown1Left, $brown1Top)
 }
 
 // /* Large desktop */
