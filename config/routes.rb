@@ -15,8 +15,8 @@ Collegeoutside::Application.routes.draw do
     get 'school'
     get 'author'
     get 'article'
-    get 'team'
   end
+  get 'team', controller: 'pages'
 
   root to: 'pages#index'
 end

@@ -1,0 +1,19 @@
+@import "variables";
+
+.profile-picture-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  padding: 10px;
+  border: 1px solid $gray;
+}
+
+.team-name {
+  font-weight: bold;
+}
+.team-role, .team-name {
+  color: $grayLightish;
+  font-size: 1.2em;
+}
