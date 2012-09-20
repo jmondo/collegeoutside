@@ -9,46 +9,16 @@
       <div class="region region-pacific"></div>
       <div class="region region-southwest"></div>
     </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Biking-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Hiking-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Climbing-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Ski_Snowboard-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Yoga-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Gear-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Winter-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Camping-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Water-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
-    <div class="sport-guy">
-      <%= image_tag "sport-icons/Running-Badge_Small.png" %>
-      <div class="sport-guy-opacity"></div>
-    </div>
+    <%= sport_guy('Biking') %>
+    <%= sport_guy('Hiking') %>
+    <%= sport_guy('Climbing') %>
+    <%= sport_guy('Ski_Snowboard') %>
+    <%= sport_guy('Yoga') %>
+    <%= sport_guy('Gear') %>
+    <%= sport_guy('Winter') %>
+    <%= sport_guy('Camping') %>
+    <%= sport_guy('Water') %>
+    <%= sport_guy('Running') %>
   </div>
   <div class="span6 recent-articles">
     <div class="row">
@@ -83,7 +53,7 @@
 <% content_for :extra_footer do -%>
   <script type="text/javascript">
     $(function() {
-      var fields = $('.sport-guy'), container = $('.sport-guys'), width = container.width(), height = width;
+      var fields = $('.sport-guy'), container = $('.sport-guys'), width = 570, height = 450;
       var hRadius = 190;
       var vRadius = 230;
       var angle = 0, step = (2*Math.PI) / fields.length;

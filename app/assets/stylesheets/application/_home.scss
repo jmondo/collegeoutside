@@ -149,6 +149,7 @@ body {
 
 .sport-guys {
   position: relative;
+  margin-top: 50px;
 }
 
 .sport-guy {
@@ -174,7 +175,7 @@ body {
 $countryMapUrl: url(image-path('country/country-sprite-360.png'));
 .region-map {
   position: absolute;
-  top: 190px;
+  top: 130px;
   left: 95px;
   width: 360px;
   height: 203px;
