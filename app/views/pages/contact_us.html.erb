@@ -41,11 +41,26 @@
   </div>
 </div>
 
-<div class="row fixed-height">
+<div class="row">
   <div class="span12">
     <h2>We want to hear from you about anything you have to say.</h2>
     <h3 class='header-gray'>Feel free to reach out to us in any way you would like.</h3>
     <br />
     <p>Email the Co-Founders: <%= link_to "josh@collegeoutside.com", "mailto:josh@collegeoutside.com" %>, <%= link_to "sarah@collegeoutside.com", "mailto:sarah@collegeoutside.com" %></p>
+  </div>
+</div>
+
+<div class="row row-pad-bottom">
+  <div class="span4 offset4 center">
+    <h3 class="header-gray">Share the love</h3>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="fb-like" data-href="https://www.facebook.com/collegeoutside" data-send="true" data-layout="box_count" data-width="450" data-show-faces="true" data-font="lucida grande"></div>
   </div>
 </div>

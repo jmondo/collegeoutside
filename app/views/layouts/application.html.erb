@@ -16,9 +16,9 @@
         <div class="span4 header-nav-logo"><%= link_to image_tag('logo.png'), '/' %></div>
         <div class="header-nav-links">
           <div class="span2 header-nav-link"><%= link_to "Schools" %></div>
-          <div class="span2 header-nav-link"><%= link_to "Our Story" %></div>
-          <div class="span2 header-nav-link"><%= link_to "All Articles" %></div>
-          <div class="span2 header-nav-link"><%= link_to "Contribute" %></div>
+          <div class="span2 header-nav-link"><%= link_to "Our Story", our_story_path %></div>
+          <div class="span2 header-nav-link"><%= link_to "All Articles", articles_path %></div>
+          <div class="span2 header-nav-link"><%= link_to "Contribute", contribute_path %></div>
         </div>
       </div>
       <%= render 'layouts/flashes' %>
@@ -37,20 +37,20 @@
       <div class="row footer-bar">
         <div class='span4 footer-box footer-box-centered'><%= link_to image_tag('logo.png'), '/', class: "logo-medium" %></div>
         <div class='span4 footer-box footer-box-centered footer-box-vertical-center'>
-          <%= link_to "Write for Your School" %> <br />
-          <%= link_to "Start a CO Branch" %>
+          <%= link_to "Write for Your School", contribute_path %> <br />
+          <%= link_to "Start a CO Branch", contribute_path %>
         </div>
         <div class='span2 footer-box'>
           <%= link_to "About Us", about_us_path %><br />
           <%= link_to "Our Team", team_path %><br />
-          <%= link_to "Jobs" %><br />
-          <%= link_to "Contact Us" %>
+          <%= link_to "Jobs", jobs_path %><br />
+          <%= link_to "Contact Us", contact_us_path %>
         </div>
         <div class='span2 footer-box'>
           <%= link_to "Schools" %><br />
-          <%= link_to "Press" %><br />
-          <%= link_to "Terms of Use" %><br />
-          <%= link_to "Give Us Feedback" %><br />
+          <%= link_to "Press", media_path %><br />
+          <%= link_to "Terms of Use", terms_path %><br />
+          <%= link_to "Give Us Feedback", contact_us_path %><br />
         </div>
       </div>
       <div class="span12">

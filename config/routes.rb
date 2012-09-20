@@ -17,12 +17,16 @@ Collegeoutside::Application.routes.draw do
     get 'article'
   end
 
+  resources :articles, only: [:index, :show]
+
   get 'team', controller: 'pages'
   get 'about_us', controller: 'pages'
+  get 'our_story', controller: 'pages'
   get 'contact_us', controller: 'pages'
-  get 'contribute', controller: 'pages'
+  get 'contribute', controller: 'pages', action: 'contact_us'
   get 'jobs', controller: 'pages'
   get 'media', controller: 'pages'
+  get 'terms', controller: 'pages'
 
   root to: 'home_articles#index'
 end
