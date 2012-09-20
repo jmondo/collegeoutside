@@ -21,6 +21,8 @@ Collegeoutside::Application.routes.draw do
   get 'about_us', controller: 'pages'
   get 'contact_us', controller: 'pages'
   get 'contribute', controller: 'pages'
+  get 'jobs', controller: 'pages'
+  get 'media', controller: 'pages'
 
   root to: 'home_articles#index'
 end
