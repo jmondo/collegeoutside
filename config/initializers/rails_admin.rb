@@ -96,6 +96,8 @@ RailsAdmin.config do |config|
       field :featured
       field :sponsored
       field :published_at
+      field :cover_photo
+      field :cover_photo_caption
     end
     create do; end
     update do; end

@@ -22,31 +22,18 @@
   </div>
   <div class="span6 recent-articles">
     <div class="row">
-      <div class="span3 recent-article-thumb">
-        <%= image_tag 'cliff.png' %>
-        <p class="recent-article-caption">A crazy beach scene</p>
-      </div>
-      <div class="span3 recent-article-thumb">
-        <%= image_tag 'clouds.png' %>
-        <p class="recent-article-caption">Clouds!</p>
-      </div>
-      <div class="span3 recent-article-thumb">
-        <%= image_tag 'cliff.png' %>
-        <p class="recent-article-caption">A crazy beach scene</p>
-      </div>
-      <div class="span3 recent-article-thumb">
-        <%= image_tag 'clouds.png' %>
-        <p class="recent-article-caption">Clouds!</p>
-      </div>
-      <div class="span3 recent-article-thumb">
-        <%= image_tag 'cliff.png' %>
-        <p class="recent-article-caption">A crazy beach scene</p>
-      </div>
-      <div class="span3 recent-article-thumb">
-        <%= image_tag 'clouds.png' %>
-        <p class="recent-article-caption">Clouds!</p>
-      </div>
+      <% if @articles.present? %>
+        <% @articles.each do |article| %>
+          <div class="span3 recent-article-thumb">
+            <%= image_tag article.cover_photo %>
+            <p class="recent-article-caption"><%= article.cover_photo_caption %></p>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="span6 recent-article-thumb"><p>Derp. We don't have any articles to show you here. Maybe you should <%= link_to "write us some", contribute_path %>?</p></div>
+      <% end %>
     </div>
+
   </div>
 </div>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809225025) do
+ActiveRecord::Schema.define(:version => 20120920194416) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -28,17 +28,19 @@ ActiveRecord::Schema.define(:version => 20120809225025) do
   add_index "activities_articles", ["article_id"], :name => "index_activities_articles_on_article_id"
 
   create_table "articles", :force => true do |t|
-    t.integer  "user_id",                         :null => false
-    t.text     "body",                            :null => false
-    t.string   "title",                           :null => false
+    t.integer  "user_id",                                :null => false
+    t.text     "body",                                   :null => false
+    t.string   "title",                                  :null => false
     t.integer  "region_id"
     t.integer  "state_id"
-    t.integer  "school_id",                       :null => false
-    t.boolean  "featured",     :default => false, :null => false
-    t.boolean  "sponsored",    :default => false, :null => false
+    t.integer  "school_id",                              :null => false
+    t.boolean  "featured",            :default => false, :null => false
+    t.boolean  "sponsored",           :default => false, :null => false
     t.datetime "published_at"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.string   "cover_photo"
+    t.string   "cover_photo_caption"
   end
 
   add_index "articles", ["published_at"], :name => "index_articles_on_published_at"

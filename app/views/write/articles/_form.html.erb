@@ -12,5 +12,7 @@
   <%= f.association :activities,
     as: :check_boxes,
     wrapper_html: { class: "inputs-col-3" } %>
+  <%= f.input :cover_photo %>
+  <%= f.input :cover_photo_caption %>
   <%= f.submit 'Save' %>
 <% end -%>
