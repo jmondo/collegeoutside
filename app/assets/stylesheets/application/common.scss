@@ -1,5 +1,107 @@
 @import 'variables';
 
+
+// header
+
+body {
+  color: $grayDark;
+  font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-image: url(image-path('snow.png'))
+}
+
+.header-nav {
+  border-bottom: 2px solid #e5e5e5;
+  margin: 20px 0;
+}
+
+.header-nav-link {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 20px 0;
+  text-align: center;
+  a {
+    color: $grayLink;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-nav-links {
+    float: right;
+    margin-top: 15px;
+  }
+
+  .header-nav-link {
+    box-sizing:border-box;
+    border-left: #E6E6E6 1px solid;
+    margin: 0;
+  }
+
+  .header-nav-link:last-child {
+    border-right: #E6E6E6 1px solid;
+  }
+}
+
+.header-nav-link:hover {
+  background-color:#eee;
+}
+
+// footer
+.social-media-bar {
+  box-sizing: border-box;
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 1px solid #b2b2b2;
+  background-color: #d1d1d1;
+  height: 52px;
+}
+
+.social-media-button {
+  float: right;
+  height: 32px;
+  width: 32px;
+  padding: 10px;
+}
+.footer-bar {
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 40px 0;
+  margin-left: 0px;
+  background-color: #e1e1e1;
+
+  a {
+    color: $grayLink;
+  }
+}
+
+// /* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .footer-box {
+    margin-left:20px;
+    text-align: center;
+  }
+  .span2.footer-box {
+    width: 40%;
+    display: inline-block;
+  }
+}
+
+.footer-box:first-child {
+  margin-left: 0px;
+}
+
+.footer-box-centered {
+  text-align: center;
+}
+
+.footer-box-vertical-center {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+// logo
+.logo-medium img {
+  width: 300px;
+}
+
 .row-pad-bottom {
   margin-bottom: 30px;
 }
