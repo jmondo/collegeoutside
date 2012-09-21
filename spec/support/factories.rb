@@ -23,10 +23,15 @@ FactoryGirl.define do
     region
     state
     school
+    activities              { [FactoryGirl.build(:activity)] }
+    cover_photo             { File.open(Rails.root.join('spec/support/attachment_fixtures/article.png')) }
+    cover_photo_caption     "Article caption!"
+    seasons                 { [FactoryGirl.build(:season)] }
 
     trait :published do
       published_at          { Time.now }
     end
+    factory :published_article, traits: [:published]
   end
 
   factory :region do
@@ -40,5 +45,13 @@ FactoryGirl.define do
 
   factory :school do
     sequence(:name)        { |n| "Some School #{n}" }
+  end
+
+  factory :activity do
+    sequence(:name)        { |n| "Activity #{n}" }
+  end
+
+  factory :season do
+    sequence(:name)        { |n| "Season #{n}" }
   end
 end

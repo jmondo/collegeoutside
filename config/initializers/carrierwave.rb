@@ -8,3 +8,10 @@ CarrierWave.configure do |config|
     config.fog_directory  = "collegeoutside-#{Rails.env}"
   end
 end
+
+if Rails.env.test?
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.enable_processing = false
+  end
+end

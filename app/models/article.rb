@@ -37,6 +37,15 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  def activity_sponsors
+    Article.
+      joins(:activities).
+      select('articles.id, articles.title, articles.published_at, articles.slug').
+      where(activities: {id: activities}).
+      sponsored.
+      group('articles.id, articles.title, articles.published_at, articles.slug')
+  end
+
   protected
 
   def set_editing_user_as_author

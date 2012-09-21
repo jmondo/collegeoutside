@@ -114,6 +114,11 @@ body {
   color: $grayLightish;
 }
 
+.header-padded {
+  padding: 10px;
+  margin: 0;
+}
+
 .fixed-height {
   height: 400px;
 }
@@ -157,4 +162,12 @@ body {
   position: relative;
   float: right;
   margin-left: 10px;
+}
+
+// asdhff
+
+.span-gray {
+  background-color: #eee;
+  border-radius: 3px;
+  margin-bottom: 20px;
 }
