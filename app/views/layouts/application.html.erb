@@ -15,7 +15,19 @@
       <div class="row header-nav">
         <div class="span4 header-nav-logo"><%= link_to image_tag('logo.png'), '/' %></div>
         <div class="header-nav-links">
-          <div class="span2 header-nav-link"><%= link_to "Schools" %></div>
+          <div class="span2 header-nav-link">
+            <div class="dropdown">
+              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                Schools
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <% School.order(:name).each do |school| %>
+                  <li><%= link_to school.name, school_articles_path(school) %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
           <div class="span2 header-nav-link"><%= link_to "Our Story", about_us_path %></div>
           <div class="span2 header-nav-link"><%= link_to "All Articles", articles_path %></div>
           <div class="span2 header-nav-link"><%= link_to "Contribute", contribute_path %></div>

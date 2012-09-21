@@ -18,6 +18,9 @@ Collegeoutside::Application.routes.draw do
   end
 
   resources :articles, only: [:index, :show]
+  resources :schools, only: [] do
+    resources :articles, only: [:index, :show]
+  end
 
   get 'team', controller: 'pages'
   get 'about_us', controller: 'pages'
