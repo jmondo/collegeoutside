@@ -30,6 +30,8 @@ gem 'mini_magick'
 gem 'redactor-rails' # using only for upload engine
 gem 'fog'
 gem 'hpricot'
+gem 'stamp'
+gem 'friendly_id'
 
 group :development do
   gem 'rspec-rails'

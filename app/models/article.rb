@@ -27,6 +27,9 @@ class Article < ActiveRecord::Base
   scope :published, where(arel_table[:published_at].not_eq nil).
     order(:published_at).reverse_order
 
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   protected
 
   def set_editing_user_as_author

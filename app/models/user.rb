@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   after_create :send_invitation
 
   def role_enum

@@ -4,4 +4,7 @@ class Activity < ActiveRecord::Base
   has_and_belongs_to_many :articles
 
   scope :except_other, where(arel_table[:name].not_eq('other'))
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end

@@ -11,13 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120920194416) do
+ActiveRecord::Schema.define(:version => 20120921045750) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "activities", ["slug"], :name => "index_activities_on_slug", :unique => true
 
   create_table "activities_articles", :id => false, :force => true do |t|
     t.integer "article_id"
@@ -41,9 +44,11 @@ ActiveRecord::Schema.define(:version => 20120920194416) do
     t.datetime "updated_at",                             :null => false
     t.string   "cover_photo"
     t.string   "cover_photo_caption"
+    t.string   "slug"
   end
 
   add_index "articles", ["published_at"], :name => "index_articles_on_published_at"
+  add_index "articles", ["slug"], :name => "index_articles_on_slug", :unique => true
 
   create_table "articles_seasons", :id => false, :force => true do |t|
     t.integer "article_id"
@@ -94,7 +99,10 @@ ActiveRecord::Schema.define(:version => 20120920194416) do
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "schools", ["slug"], :name => "index_schools_on_slug", :unique => true
 
   create_table "seasons", :force => true do |t|
     t.string   "name"
@@ -130,11 +138,13 @@ ActiveRecord::Schema.define(:version => 20120920194416) do
     t.string   "invited_by_type"
     t.string   "role",                                 :default => "user", :null => false
     t.string   "name"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
   add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
 
 end
