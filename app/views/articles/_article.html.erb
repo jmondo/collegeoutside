@@ -1,0 +1,13 @@
+<% size = "small_cover" if local_assigns[:size].nil? %>
+<% span_cover_sizes = {
+  "small_cover" => "span3",
+  "medium_cover" => "span4",
+  "wide_cover" => "span8"
+} %>
+<% span_class = span_cover_sizes[size] %>
+<div class="<%= span_class %> recent-article-thumb recent-article-thumb-<%= size %>">
+  <%= link_to image_tag(article.cover_photo.send(size)), article_path(article) %>
+  <%= link_to article_path(article), class: "#{span_class} recent-article-caption recent-article-caption-#{size}" do %>
+    <%= article.cover_photo_caption %>
+  <% end %>
+</div>

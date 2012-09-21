@@ -8,6 +8,6 @@ class HomeArticlesController < ApplicationController
   protected
 
   def end_of_association_chain
-    super.published.page(params[:page]).per(6)
+    super.published_no_flags.page(params[:page]).per(6)
   end
 end

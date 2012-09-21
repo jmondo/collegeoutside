@@ -1,0 +1,8 @@
+<div class="row">
+  <%= render featured_articles, size: 'wide_cover' %>
+  <%= render @articles, size: 'medium_cover' %>
+  <%= render sponsored_articles, size: 'wide_cover' %>
+  <div class="span12">
+    <%= paginate @articles %>
+  </div>
+</div>

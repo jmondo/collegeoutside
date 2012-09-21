@@ -16,14 +16,7 @@
   <div class="span6 recent-articles">
     <div class="row">
       <% if @articles.present? %>
-        <% @articles.each do |article| %>
-          <div class="span3 recent-article-thumb">
-            <%= link_to image_tag(article.cover_photo), article_path(article) %>
-            <%= link_to article_path(article), class: 'recent-article-caption' do %>
-              <%= article.cover_photo_caption %>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render @articles %>
       <% else %>
         <div class="span6 recent-article-thumb"><p>Derp. We don't have any articles to show you here. Maybe you should <%= link_to "write us some", contribute_path %>?</p></div>
       <% end %>

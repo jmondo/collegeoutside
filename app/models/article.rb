@@ -24,8 +24,15 @@ class Article < ActiveRecord::Base
 
   before_validation :set_editing_user_as_author, on: :create
 
-  scope :published, where(arel_table[:published_at].not_eq nil).
+  scope :published, where(arel_table[:published_at].not_eq(nil)).
     order(:published_at).reverse_order
+
+  scope :not_featured, where(arel_table[:featured].eq(false))
+  scope :not_sponsored, where(arel_table[:sponsored].eq(false))
+
+  scope :published_no_flags, published.not_featured.not_sponsored
+  scope :sponsored, where(arel_table[:sponsored].eq(true)).published
+  scope :featured, where(arel_table[:featured].eq(true)).published
 
   extend FriendlyId
   friendly_id :title, use: :slugged

@@ -1,40 +1,5 @@
 @import "variables";
 
-// home page content
-.content {
-  margin-bottom: 40px;
-}
-
-.recent-articles {
-  margin-top: -30px;
-}
-
-.recent-article-thumb {
-  margin-top: 30px;
-  height: 193px;
-  position: relative;
-}
-
-.recent-article-thumb:hover {
-  opacity: 1;
-}
-
-.recent-article-caption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 24px;
-  width: 270px;
-  padding: 160px 10px 10px 10px;
-  background-color: rgba(255,255,255,0.3);
-  color: $grayDarker;
-}
-
-.recent-article-caption:hover {
-  background-color: transparent;
-  color: transparent;
-}
-
 // country map
 $countryMapUrl: url(image-path('country/country-sprite-360.png'));
 .region-map {

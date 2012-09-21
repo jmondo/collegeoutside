@@ -1,8 +1,45 @@
+// article page
+@import "variables";
+
 .article-body {
   font-size: 1.1em;
   line-height: 1.5em;
   p {
     margin-bottom: 20px;
-    text-align: justify;
   }
+}
+
+// article thumbnails
+
+.recent-articles {
+  margin-top: -30px;
+}
+
+.recent-article-thumb {
+  margin-top: 30px;
+  position: relative;
+}
+
+.recent-article-thumb:hover {
+  opacity: 1;
+}
+
+.recent-article-caption {
+  height: 24px;
+  color: $grayDarker;
+  margin: 0;
+  padding: 10px 10px 10px 0;
+}
+
+.recent-article-caption-small_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.3);
+  padding: 160px 10px 10px 10px;
+}
+
+.recent-article-caption-small_cover:hover {
+  background-color: transparent;
+  color: transparent;
 }
