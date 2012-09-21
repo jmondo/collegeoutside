@@ -9,16 +9,9 @@
       <div class="region region-pacific"></div>
       <div class="region region-southwest"></div>
     </div>
-    <%= sport_guy('Biking') %>
-    <%= sport_guy('Hiking') %>
-    <%= sport_guy('Climbing') %>
-    <%= sport_guy('Ski_Snowboard') %>
-    <%= sport_guy('Yoga') %>
-    <%= sport_guy('Gear') %>
-    <%= sport_guy('Winter') %>
-    <%= sport_guy('Camping') %>
-    <%= sport_guy('Water') %>
-    <%= sport_guy('Running') %>
+    <% Activity.except_other.each do |activity| %>
+      <%= sport_guy(activity.name.titleize) %>
+    <% end %>
   </div>
   <div class="span6 recent-articles">
     <div class="row">

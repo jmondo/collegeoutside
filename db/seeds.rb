@@ -26,6 +26,7 @@ end
   "winter",
   "camping",
   "gear",
+  "yoga",
   "other"
 ].each do |activity|
   Activity.find_or_create_by_name!(activity)
