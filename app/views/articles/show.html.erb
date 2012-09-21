@@ -26,8 +26,8 @@
 
   <!-- right sidebar -->
   <div class="span3">
-    <div class="row">
-      <div class="span3 span-gray">
+    <div class="span3 span-gray">
+      <div class="pad-box">
         <h4 class="header-padded">Gear you may need</h4>
         <ul>
           <% activity_sponsors.each do |article| %>
@@ -36,8 +36,30 @@
         </ul>
       </div>
     </div>
-    <div class="row show-grid">
-      <div class="span3">More from author</div>
+    <div class="span3 span-gray">
+      <div class="pad-box">
+        <h4 class="header-padded">More from <%= @article.user.name %></h4>
+        <ul>
+          <% recent_articles_by_user.each do |article| %>
+            <li><%= link_to article.title, article %></li>
+          <% end %>
+        </ul>
+
+        <h4 class="header-padded">More from <%= @article.school.name %></h4>
+        <ul>
+          <% recent_articles_by_school.each do |article| %>
+            <li><%= link_to article.title, article %></li>
+          <% end %>
+        </ul>
+
+        <h4 class="header-padded">More from <%= @article.activities.pluck(:name).to_sentence %></h4>
+        <ul>
+          <% recent_articles_by_activity.each do |article| %>
+            <li><%= link_to article.title, article %></li>
+          <% end %>
+        </ul>
+
+      </div>
     </div>
   </div>
 </div>

@@ -60,4 +60,24 @@ describe Article do
       article.activity_sponsors.should == [sponsored_article_2_activities]
     end
   end
+
+  describe "recent by activity" do
+    let!(:activity) { FactoryGirl.create(:activity) }
+    let!(:activity2) { FactoryGirl.create(:activity) }
+
+    let!(:article_2_activities) { FactoryGirl.create(:published_article, activities: [activity, activity2]) }
+    let!(:article_first_activity) { FactoryGirl.create(:published_article, activities: [activity]) }
+    let!(:article_second_activity) { FactoryGirl.create(:published_article, activities: [activity2]) }
+
+    it "should show articles for a set of activities" do
+      Article.recent_by_activities([activity]).to_a.length.should eql(2)
+      Article.recent_by_activities([activity]).should include(article_2_activities)
+      Article.recent_by_activities([activity]).should include(article_first_activity)
+    end
+
+    it "should return articles in reverse chron by published_at" do
+      Article.recent_by_activities([activity])[1].should == (article_2_activities)
+      Article.recent_by_activities([activity])[0].should == (article_first_activity)
+    end
+  end
 end

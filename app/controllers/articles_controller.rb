@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   inherit_resources
-  helper_method :featured_articles, :sponsored_articles, :activity_sponsors
+  helper_method :featured_articles, :sponsored_articles
+  helper_method :activity_sponsors, :recent_articles_by_user, :recent_articles_by_school, :recent_articles_by_activity
+
   protected
 
   # collection stuff
@@ -19,5 +21,17 @@ class ArticlesController < ApplicationController
   # resource stuff
   def activity_sponsors
     @activity_sponsors ||= resource.activity_sponsors
+  end
+
+  def recent_articles_by_user
+    @recent_articles_by_user ||= Article.recent_by_user(resource.user)
+  end
+
+  def recent_articles_by_school
+    @recent_articles_by_school ||= Article.recent_by_school(resource.school)
+  end
+
+  def recent_articles_by_activity
+    @recent_articles_by_activity ||= Article.recent_by_activities(resource.activities)
   end
 end

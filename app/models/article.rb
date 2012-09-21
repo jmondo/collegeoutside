@@ -38,15 +38,38 @@ class Article < ActiveRecord::Base
   friendly_id :title, use: :slugged
 
   def activity_sponsors
-    Article.
-      joins(:activities).
-      select('articles.id, articles.title, articles.published_at, articles.slug').
-      where(activities: {id: activities}).
-      sponsored.
-      group('articles.id, articles.title, articles.published_at, articles.slug')
+    self.class.activity_sponsors(activities)
+  end
+
+  class << self
+
+    def activity_sponsors(activities)
+      by_activities(activities).sponsored
+    end
+
+    def recent_by_user(user)
+      published.where(user_id: user)
+    end
+
+    def recent_by_school(school)
+      published.where(school_id: school)
+    end
+
+    def recent_by_activities(activities)
+      published.by_activities(activities)
+    end
   end
 
   protected
+
+  class << self
+    def by_activities(activities)
+      joins(:activities).
+      select('articles.id, articles.title, articles.published_at, articles.slug').
+      where(activities: {id: activities}).
+      group('articles.id, articles.title, articles.published_at, articles.slug')
+    end
+  end
 
   def set_editing_user_as_author
     if editing_user
