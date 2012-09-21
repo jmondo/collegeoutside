@@ -117,3 +117,40 @@ body {
 .center {
   text-align: center;
 }
+
+
+// sport guys
+
+.sport-guys {
+  position: relative;
+  margin-top: 50px;
+  height: 500px;
+}
+
+.sport-guy {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.sport-guy-opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.4);
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+}
+
+.sport-guy-opacity:hover {
+  background-color: transparent;
+}
+
+.sport-guy-mini {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  float: right;
+  margin-left: 10px;
+}

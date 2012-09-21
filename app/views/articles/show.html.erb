@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="span9">
+
+    <!-- metadata -->
+    <div class="row row-pad-bottom">
+      <div class="span9">
+        <div class='article-sport-guys'>
+          <% @article.activities.each do |act| %>
+            <%= mini_sport_guy(act.name) %>
+          <% end %>
+        </div>
+        <h1><%= @article.title %></h1>
+        <h3 class="header-gray"><%= @article.user.name %>, <%= @article.school.name %>, <%= @article.published_at.stamp("January 23, 2011") %></h3>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="row">
+      <div class="span9 height3">
+        <%= @article.body.html_safe %>
+      </div>
+    </div>
+  </div>
+  <div class="span3 span-parent">
+    <div class="row show-grid">
+      <div class="span3">Gear</div>
+    </div>
+    <div class="row show-grid">
+      <div class="span3">More from author</div>
+    </div>
+  </div>
+</div>

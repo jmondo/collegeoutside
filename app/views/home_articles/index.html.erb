@@ -10,7 +10,7 @@
       <div class="region region-southwest"></div>
     </div>
     <% Activity.except_other.each do |activity| %>
-      <%= sport_guy(activity.name.titleize) %>
+      <%= sport_guy(activity.name) %>
     <% end %>
   </div>
   <div class="span6 recent-articles">
@@ -18,8 +18,10 @@
       <% if @articles.present? %>
         <% @articles.each do |article| %>
           <div class="span3 recent-article-thumb">
-            <%= image_tag article.cover_photo %>
-            <p class="recent-article-caption"><%= article.cover_photo_caption %></p>
+            <%= link_to image_tag(article.cover_photo), article_path(article) %>
+            <%= link_to article_path(article), class: 'recent-article-caption' do %>
+              <%= article.cover_photo_caption %>
+            <% end %>
           </div>
         <% end %>
       <% else %>
