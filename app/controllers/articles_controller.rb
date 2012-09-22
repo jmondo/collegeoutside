@@ -20,18 +20,18 @@ class ArticlesController < ApplicationController
 
   # resource stuff
   def activity_sponsors
-    @activity_sponsors ||= resource.activity_sponsors
+    @activity_sponsors ||= resource.activity_sponsors.limit(2)
   end
 
   def recent_articles_by_user
-    @recent_articles_by_user ||= Article.recent_by_user(resource.user)
+    @recent_articles_by_user ||= Article.recent_by_user(resource.user).limit(10)
   end
 
   def recent_articles_by_school
-    @recent_articles_by_school ||= Article.recent_by_school(resource.school)
+    @recent_articles_by_school ||= Article.recent_by_school(resource.school).limit(10)
   end
 
   def recent_articles_by_activity
-    @recent_articles_by_activity ||= Article.recent_by_activities(resource.activities)
+    @recent_articles_by_activity ||= Article.recent_by_activities(resource.activities).limit(10)
   end
 end

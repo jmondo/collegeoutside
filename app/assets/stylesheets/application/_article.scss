@@ -31,15 +31,20 @@
   padding: 10px 10px 10px 0;
 }
 
-.recent-article-caption-small_cover {
+.recent-article-caption-bottom {
   position: absolute;
   top: 0;
   left: 0;
   background-color: rgba(255,255,255,0.3);
-  padding: 160px 10px 10px 10px;
+  padding: 165px 10px 10px 10px;
+  font-weight: bold;
 }
 
-.recent-article-caption-small_cover:hover {
+.recent-article-caption-bottom:hover {
   background-color: transparent;
   color: transparent;
+}
+
+.recent-article-thumb-no-container {
+  margin: 10px 0;
 }

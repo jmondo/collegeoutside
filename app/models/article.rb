@@ -64,10 +64,12 @@ class Article < ActiveRecord::Base
 
   class << self
     def by_activities(activities)
+      select_cols = "articles.id, articles.title, articles.published_at,
+        articles.slug, articles.cover_photo, articles.cover_photo_caption"
       joins(:activities).
-      select('articles.id, articles.title, articles.published_at, articles.slug').
+      select(select_cols).
       where(activities: {id: activities}).
-      group('articles.id, articles.title, articles.published_at, articles.slug')
+      group(select_cols)
     end
   end
 

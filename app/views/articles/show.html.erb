@@ -27,14 +27,10 @@
   <div class="span3">
     <% if activity_sponsors.present? %>
       <div class="span3 span-gray">
-        <div class="pad-box">
+        <!-- <div class="pad-box"> -->
           <h4 class="header-padded">Gear you may need</h4>
-          <ul>
-            <% activity_sponsors.each do |article| %>
-              <li><%= link_to article.title, article %></li>
-            <% end %>
-          </ul>
-        </div>
+          <%= render activity_sponsors, caption_pos: "bottom", container: false %>
+        <!-- </div> -->
       </div>
     <% end %>
     <div class="span3 span-gray">
