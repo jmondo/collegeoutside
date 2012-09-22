@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120921045750) do
+ActiveRecord::Schema.define(:version => 20120922015532) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -100,6 +100,8 @@ ActiveRecord::Schema.define(:version => 20120921045750) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "slug"
+    t.string   "full_name"
+    t.string   "location"
   end
 
   add_index "schools", ["slug"], :name => "index_schools_on_slug", :unique => true

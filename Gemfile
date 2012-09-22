@@ -32,6 +32,7 @@ gem 'fog'
 gem 'hpricot'
 gem 'stamp'
 gem 'friendly_id'
+gem 'sanitize'
 
 group :development do
   gem 'rspec-rails'

@@ -24,6 +24,15 @@ body {
   }
 }
 
+.inline-block {
+  display: inline-block;
+}
+
+.span-elipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 768px) {
   .header-nav-links {
     float: right;

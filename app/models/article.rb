@@ -41,6 +41,10 @@ class Article < ActiveRecord::Base
     self.class.activity_sponsors(activities)
   end
 
+  def text_preview
+    Sanitize.clean(body.truncate(950), Sanitize::Config::RESTRICTED)
+  end
+
   class << self
 
     def activity_sponsors(activities)

@@ -19,7 +19,7 @@ Collegeoutside::Application.routes.draw do
 
   resources :articles, only: [:index, :show]
   resources :schools, only: [] do
-    resources :articles, only: [:index]
+    resources :articles, only: [:index], controller: 'school_articles'
   end
 
   get 'team', controller: 'pages'
