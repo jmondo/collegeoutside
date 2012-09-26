@@ -11,10 +11,11 @@
   <div class="span9">
     <div class="row">
       <div class="span9 span-gray">
-        <div class="span4 recent-article-thumb recent-article-thumb-no-container">
-          <%= render 'articles/article', article: featured_article, size: 'medium_cover' %>
-        </div>
-        <div class="span5 article-preview-container">
+        <% if (featured_article = thumbnail_articles[0]).present? %>
+          <div class="span4 recent-article-thumb recent-article-thumb-no-container">
+            <%= render 'articles/article', article: featured_article, size: 'medium_cover' %>
+          </div>
+          <div class="span5 article-preview-container">
             <h3><%= featured_article.title %></h3>
             <h4 class="header-gray">
               <%= featured_article.user.name %>,
@@ -26,18 +27,42 @@
             </div>
             <%= link_to "Read more", featured_article, class: "article-preview-read-more" %>
           </div>
+        <% else %>
+          <p>We don't have any featured articles to show you</p>
+        <% end %>
       </div>
 
     </div>
-    <div class="row show-grid">
-      <div class="span6">Sponsored thing</div>
-      <div class="span3">Adventure Map</div>
-    </div>
-    <div class="row show-grid">
-      <div class="span3">Article</div>
-      <div class="span3">Article</div>
-      <div class="span3">Article</div>
+    <div class="row">
+      <% if (sponsored_article = thumbnail_articles[1]).present? %>
+        <div class="span6 recent-article-thumb">
+          <%= render 'articles/article', article: thumbnail_articles[1], size: 'double_wide_cover' %>
+          <%= render 'articles/overlay_caption', article: thumbnail_articles[1] %>
+        </div>
+      <% end %>
+      <% if thumbnail_articles[2..5].present? %>
+        <% thumbnail_articles[2..5].each do |article| %>
+          <div class="span3 recent-article-thumb">
+            <%= render 'articles/article', article: article %>
+            <%= render 'articles/overlay_caption', article: article %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
-  <div class="span3">List of Articles</div>
+  <div class="span3 span-gray row-pad-bottom">
+    <div class="pad-box">
+      List of Contributors
+    </div>
+  </div>
+  <div class="span3 span-gray">
+    <div class="pad-box">
+      <h4 class="header-padded">All Articles</h4>
+      <ul>
+        <% collection.each do |article| %>
+          <li><%= link_to article.title, article %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
