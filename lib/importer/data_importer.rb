@@ -8,7 +8,7 @@ module Importer
           login = (a/'wp:author_login').text
           author_hash[login] = email
           unless User.find_by_email(email)
-            User.invite!(email: email)
+            User.invite!(email: email, school: import_school)
           end
         end
       end
