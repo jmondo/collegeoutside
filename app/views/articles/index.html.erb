@@ -1,7 +1,21 @@
 <div class="row">
-  <%= render featured_articles, size: 'wide_cover', caption_pos: 'below' %>
-  <%= render @articles, size: 'medium_cover', caption_pos: 'below' %>
-  <%= render sponsored_articles, size: 'wide_cover', caption_pos: 'below' %>
+  <div class="span8 recent-article-thumb">
+    <%= render featured_article, size: 'wide_cover', caption_pos: 'below' %>
+    <%= render 'articles/below_caption', article: featured_article %>
+  </div>
+
+  <% @articles.each do |article| %>
+    <div class="span4 recent-article-thumb">
+      <%= render article, size: "medium_cover" %>
+      <%= render 'articles/below_caption', article: article %>
+    </div>
+  <% end %>
+
+  <div class="span8 recent-article-thumb">
+    <%= render sponsored_article, size: 'wide_cover', caption_pos: 'below' %>
+    <%= render 'articles/below_caption', article: sponsored_article %>
+  </div>
+
   <div class="span12">
     <%= paginate @articles %>
   </div>

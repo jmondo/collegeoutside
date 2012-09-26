@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   inherit_resources
-  helper_method :featured_articles, :sponsored_articles
+  helper_method :featured_article, :sponsored_article
   helper_method :activity_sponsors, :recent_articles_by_user, :recent_articles_by_school, :recent_articles_by_activity
 
   protected
@@ -10,12 +10,12 @@ class ArticlesController < ApplicationController
     @articles ||= end_of_association_chain.published_no_flags.page(params[:page]).per(8)
   end
 
-  def featured_articles
-    @featured_articles ||= end_of_association_chain.featured.page(params[:page]).per(1)
+  def featured_article
+    @featured_articles ||= end_of_association_chain.featured.page(params[:page]).per(1).first
   end
 
-  def sponsored_articles
-    @sponsored_articles ||= end_of_association_chain.sponsored.page(params[:page]).per(1)
+  def sponsored_article
+    @sponsored_articles ||= end_of_association_chain.sponsored.page(params[:page]).per(1).first
   end
 
   # resource stuff
