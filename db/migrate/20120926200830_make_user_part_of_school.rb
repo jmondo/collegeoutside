@@ -11,6 +11,7 @@ class MakeUserPartOfSchool < ActiveRecord::Migration
   def change
     add_column :users, :school_id, :integer
     add_column :users, :position, :string
+    add_column :users, :photo, :string
     add_index :users, :school_id
 
     add_column :users, :articles_count, :integer

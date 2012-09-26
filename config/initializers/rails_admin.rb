@@ -181,6 +181,7 @@ RailsAdmin.config do |config|
       field :name, :string
       field :email, :string
       field :role, :enum
+      field :school
       field :invited_by, :polymorphic_association
       field :created_at, :datetime
       field :invitation_sent_at, :datetime
@@ -194,6 +195,7 @@ RailsAdmin.config do |config|
       field :role, :enum
       field :position, :string
       field :school
+      field :photo
     end
     create do
       field :name, :string
@@ -201,6 +203,7 @@ RailsAdmin.config do |config|
       field :role, :enum
       field :position, :string
       field :school
+      field :photo
     end
 
     update do; end

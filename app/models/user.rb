@@ -1,3 +1,4 @@
+require 'carrierwave/orm/activerecord'
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -8,7 +9,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   ACCESSIBLE_ATTRS = [:email, :password, :password_confirmation, :remember_me, :name]
   attr_accessible *ACCESSIBLE_ATTRS
-  attr_accessible *ACCESSIBLE_ATTRS, :role, :position, :school_id, as: :chief
+  attr_accessible *ACCESSIBLE_ATTRS, :role, :position, :school_id,
+    :photo, :photo_cache, :remove_photo, as: :chief
   # attr_accessible :title, :body
 
   ROLES = ["user", "chief", "writer"]
@@ -24,6 +26,8 @@ class User < ActiveRecord::Base
       self.role == "#{r}"
     end
   end
+
+  mount_uploader :photo, ProfilePhotoUploader
 
   extend FriendlyId
   friendly_id :name, use: :slugged

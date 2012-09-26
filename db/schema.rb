@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926200830) do
+ActiveRecord::Schema.define(:version => 20120926213434) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -96,12 +96,13 @@ ActiveRecord::Schema.define(:version => 20120926200830) do
   end
 
   create_table "schools", :force => true do |t|
-    t.string   "name",       :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",         :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "slug"
     t.string   "full_name"
     t.string   "location"
+    t.text     "contact_html"
   end
 
   add_index "schools", ["slug"], :name => "index_schools_on_slug", :unique => true
@@ -143,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20120926200830) do
     t.string   "slug"
     t.integer  "school_id"
     t.string   "position"
+    t.string   "photo"
     t.integer  "articles_count"
   end
 

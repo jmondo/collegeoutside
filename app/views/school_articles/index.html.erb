@@ -52,7 +52,27 @@
   </div>
   <div class="span3 span-gray row-pad-bottom">
     <div class="pad-box">
-      List of Contributors
+      <% if @school.contact_html.present? %>
+        <h4 class="header-padded">Contact <%= @school.name %></h4>
+        <%= @school.contact_html.html_safe %>
+        <hr />
+      <% end %>
+      <h4 class="header-padded">All Writers</h4>
+      <% writers.each do |u| %>
+        <div class="writer">
+          <div class="writer-image">
+            <%= image_tag u.photo.thumb %>
+          </div>
+          <div class="writer-snippet">
+            <%= u.name %><br />
+            <% if u.position.present? %>
+              <%= u.position %> <br />
+            <% end %>
+            <%= mail_to u.email, nil, encode: 'javascript' %> <br />
+            <%= pluralize u.articles_count, 'articles' %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="span3 span-gray">

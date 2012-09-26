@@ -6,7 +6,7 @@ class SchoolArticlesController < ApplicationController
     instance_name: "article"
   belongs_to :school
 
-  helper_method :thumbnail_articles
+  helper_method :thumbnail_articles, :writers
 
   protected
 
@@ -23,6 +23,10 @@ class SchoolArticlesController < ApplicationController
 
   def collection
     @articles ||= end_of_association_chain.published
+  end
+
+  def writers
+    @writers ||= parent.users.order(:articles_count).reverse_order
   end
 
 end
