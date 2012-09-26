@@ -27,10 +27,13 @@
   <div class="span3">
     <% if activity_sponsors.present? %>
       <div class="span3 span-gray">
-        <!-- <div class="pad-box"> -->
-          <h4 class="header-padded">Gear you may need</h4>
-          <%= render activity_sponsors, caption_pos: "bottom", container: false %>
-        <!-- </div> -->
+        <h4 class="header-padded">Gear you may need</h4>
+        <% activity_sponsors.each do |sponsor_article| %>
+          <div class="span3 recent-article-thumb recent-article-thumb-no-container">
+            <%= render 'articles/article', article: sponsor_article %>
+            <%= render 'articles/overlay_caption', article: sponsor_article %>
+          </div>
+        <% end %>
       </div>
     <% end %>
     <div class="span3 span-gray">

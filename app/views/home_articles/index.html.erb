@@ -16,7 +16,12 @@
   <div class="span6 recent-articles">
     <div class="row">
       <% if @articles.present? %>
-        <%= render @articles %>
+        <% @articles.each do |article| %>
+          <div class="span3 recent-article-thumb">
+            <%= render 'articles/article', article: article %>
+            <%= render 'articles/overlay_caption', article: article %>
+          </div>
+        <% end %>
       <% else %>
         <div class="span6 recent-article-thumb"><p>Derp. We don't have any articles to show you here. Maybe you should <%= link_to "write us some", contribute_path %>?</p></div>
       <% end %>
