@@ -8,13 +8,16 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   ACCESSIBLE_ATTRS = [:email, :password, :password_confirmation, :remember_me, :name]
   attr_accessible *ACCESSIBLE_ATTRS
-  attr_accessible *ACCESSIBLE_ATTRS, :role, as: :chief
+  attr_accessible *ACCESSIBLE_ATTRS, :role, :position, :school_id, as: :chief
   # attr_accessible :title, :body
 
   ROLES = ["user", "chief", "writer"]
 
   validates_inclusion_of :role, in: ROLES
-  validates_presence_of :name
+  validates_presence_of :name, :school
+
+  has_many :articles
+  belongs_to :school
 
   ROLES.each do |r|
     send(:define_method, "#{r}?") do

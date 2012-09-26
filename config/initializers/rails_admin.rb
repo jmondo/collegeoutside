@@ -192,11 +192,15 @@ RailsAdmin.config do |config|
       field :name, :string
       field :email, :string
       field :role, :enum
+      field :position, :string
+      field :school
     end
     create do
       field :name, :string
       field :email, :string
       field :role, :enum
+      field :position, :string
+      field :school
     end
 
     update do; end

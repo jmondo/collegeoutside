@@ -9,7 +9,8 @@ class Article < ActiveRecord::Base
   belongs_to :region
   belongs_to :school
   belongs_to :state
-  belongs_to :user
+  belongs_to :user,
+    counter_cache: true
 
   has_and_belongs_to_many :seasons
   has_and_belongs_to_many :activities
