@@ -33,6 +33,7 @@ gem 'hpricot'
 gem 'stamp'
 gem 'friendly_id'
 gem 'sanitize'
+gem 'ransack'
 
 group :development do
   gem 'rspec-rails'

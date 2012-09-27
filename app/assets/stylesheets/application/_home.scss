@@ -15,14 +15,14 @@ $countryMapUrl: url(image-path('country/country-sprite-360.png'));
 .region {
   position: absolute;
 }
-.region:hover {
+.region:hover, .region-active {
   background-image:$countryMapUrl;
 }
 
 @mixin region-position($left, $top, $bgLeft, $bgTop) {
   top: $top;
   left: $left;
-  &:hover {
+  &:hover, &.region-active {
     background-position: ($bgLeft - $left) ($bgTop - $top);
   }
 }
@@ -43,7 +43,7 @@ $brown2Left:0px;
   @include region-position(225px, 93px, $brown2Left, $brown2Top)
 }
 
-.region-west {
+.region-mountain {
   height: 90px;
   width: 90px;
   @include region-position(75px, 25px, $brown2Left, $brown2Top)

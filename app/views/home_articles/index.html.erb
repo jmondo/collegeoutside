@@ -2,15 +2,15 @@
   <div class="span6 sport-guys">
     &nbsp;
     <div class="region-map">
-      <div class="region region-northeast"></div>
-      <div class="region region-southeast"></div>
-      <div class="region region-midwest"></div>
-      <div class="region region-west"></div>
-      <div class="region region-pacific"></div>
-      <div class="region region-southwest"></div>
+      <%= region_link('northeast') %>
+      <%= region_link('southeast') %>
+      <%= region_link('midwest') %>
+      <%= region_link('mountain') %>
+      <%= region_link('pacific') %>
+      <%= region_link('southwest') %>
     </div>
     <% Activity.except_other.each do |activity| %>
-      <%= sport_guy(activity.name) %>
+      <%= sport_guy_link(activity.name) %>
     <% end %>
   </div>
   <div class="span6 recent-articles">
@@ -23,7 +23,7 @@
           </div>
         <% end %>
       <% else %>
-        <div class="span6 recent-article-thumb"><p>Derp. We don't have any articles to show you here. Maybe you should <%= link_to "write us some", contribute_path %>?</p></div>
+        <div class="span6 recent-article-thumb"><p>Derp. We don't have any articles to show you here. Maybe you should <%= link_to "write some", contribute_path %>?</p></div>
       <% end %>
     </div>
 
