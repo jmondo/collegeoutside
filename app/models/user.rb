@@ -16,9 +16,8 @@ class User < ActiveRecord::Base
   ROLES = ["user", "chief", "writer"]
 
   validates_inclusion_of :role, in: ROLES
-  validates_presence_of :name, :photo
-  validates_presence_of :school,
-    if: proc{|u| u.role != "chief"}
+  validates_presence_of :school, :name, :photo,
+    if: proc{ |u| u.role != "chief" }
 
   has_many :articles
   belongs_to :school
