@@ -1,8 +1,10 @@
 <div class="row">
-  <div class="span8 recent-article-thumb">
-    <%= render featured_article, size: 'wide_cover', caption_pos: 'below' %>
-    <%= render 'articles/below_caption', article: featured_article %>
-  </div>
+  <% if featured_article %>
+    <div class="span8 recent-article-thumb">
+      <%= render featured_article, size: 'wide_cover', caption_pos: 'below' %>
+      <%= render 'articles/below_caption', article: featured_article %>
+    </div>
+  <% end %>
 
   <% @articles.each do |article| %>
     <div class="span4 recent-article-thumb">
@@ -11,10 +13,12 @@
     </div>
   <% end %>
 
-  <div class="span8 recent-article-thumb">
-    <%= render sponsored_article, size: 'wide_cover', caption_pos: 'below' %>
-    <%= render 'articles/below_caption', article: sponsored_article %>
-  </div>
+  <% if sponsored_article %>
+    <div class="span8 recent-article-thumb">
+      <%= render sponsored_article, size: 'wide_cover', caption_pos: 'below' %>
+      <%= render 'articles/below_caption', article: sponsored_article %>
+    </div>
+  <% end %>
 
   <div class="span12">
     <%= paginate @articles %>
