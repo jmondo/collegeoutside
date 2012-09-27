@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  ACCESSIBLE_ATTRS = [:email, :password, :password_confirmation, :remember_me, :name]
+  ACCESSIBLE_ATTRS = [:email, :password, :password_confirmation, :remember_me, :name, :school]
   attr_accessible *ACCESSIBLE_ATTRS
   attr_accessible *ACCESSIBLE_ATTRS, :role, :position, :school_id,
     :photo, :photo_cache, :remove_photo, as: :chief
@@ -16,7 +16,9 @@ class User < ActiveRecord::Base
   ROLES = ["user", "chief", "writer"]
 
   validates_inclusion_of :role, in: ROLES
-  validates_presence_of :name, :school, :photo
+  validates_presence_of :name, :photo
+  validates_presence_of :school,
+    if: proc{|u| u.role != "chief"}
 
   has_many :articles
   belongs_to :school
