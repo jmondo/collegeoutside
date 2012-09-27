@@ -1,0 +1,38 @@
+<div class="row row-pad-bottom">
+  <div class="span12 center">
+    <%= render 'schools/header', school: @user.school %>
+  </div>
+</div>
+<div class="row row-pad-bottom">
+  <div class="span2">
+    <%= image_tag @user.photo.medium %>
+  </div>
+  <div class="span9">
+    <div class="user-info">
+      <h2><%= @user.name %>, <%= @user.position %></h2>
+      <h3 class="header-grayer"><%= @user.email %></h3>
+    </div>
+    <% if @user.activities %>
+      <div class="article-sport-guys">
+        <% @user.activity_names.each do |name| %>
+          <%= mini_sport_guy(name.name) %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <% if collection.present? %>
+    <% collection.each do |art| %>
+      <div class="span4 recent-article-thumb">
+        <%= render 'articles/article', article: art, size: 'medium_cover' %>
+        <%= render 'articles/overlay_caption', article: art, size: 'medium_cover' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="span12">
+    <%= paginate collection %>
+  </div>
+</div>

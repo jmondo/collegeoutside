@@ -123,6 +123,10 @@ body {
   color: $grayLightish;
 }
 
+.header-grayer {
+  color: $gray;
+}
+
 .pad-box {
   padding: 15px;
 }
@@ -173,8 +177,17 @@ body {
   width: 56px;
   height: 56px;
   position: relative;
-  float: right;
   margin-left: 10px;
+  display: inline-block;
+}
+
+.article-sport-guys-right {
+  float: right;
+  margin-top: 0;
+}
+.article-sport-guys {
+  margin-left: -10px;
+  margin-top: 10px;
 }
 
 // asdhff

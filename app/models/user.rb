@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 
   has_many :articles
   belongs_to :school
+  has_many :activities,
+    through: :articles
 
   ROLES.each do |r|
     send(:define_method, "#{r}?") do
@@ -44,6 +46,10 @@ class User < ActiveRecord::Base
     else
       :default
     end
+  end
+
+  def activity_names
+    activities.select('activities.name').group('activities.name')
   end
 
   protected

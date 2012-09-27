@@ -1,10 +1,6 @@
 <div class="row row-pad-bottom">
-  <div class="span12 center ">
-    <%= image_tag 'c-logo.png' %>
-    <div class="school-header-info">
-      <h2><%= @school.full_name || @school.name %></h2>
-      <h3 class="header-gray"><%= @school.location %></h3>
-    </div>
+  <div class="span12 center">
+    <%= render 'schools/header', school: @school %>
   </div>
 </div>
 <div class="row">
@@ -28,7 +24,9 @@
             <%= link_to "Read more", featured_article, class: "article-preview-read-more" %>
           </div>
         <% else %>
-          <p>We don't have any featured articles to show you</p>
+          <div class="pad-box">
+            <p>We don't have any featured articles to show you</p>
+          </div>
         <% end %>
       </div>
 
@@ -61,10 +59,10 @@
       <% writers.each do |u| %>
         <div class="writer">
           <div class="writer-image">
-            <%= image_tag u.photo.thumb %>
+            <%= link_to image_tag(u.photo.thumb), writer_articles_path(u) %>
           </div>
           <div class="writer-snippet">
-            <%= u.name %><br />
+            <%= link_to u.name, writer_articles_path(u) %><br />
             <% if u.position.present? %>
               <%= u.position %> <br />
             <% end %>

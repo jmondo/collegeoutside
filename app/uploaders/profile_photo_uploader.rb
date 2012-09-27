@@ -7,7 +7,11 @@ class ProfilePhotoUploader < BaseUploader
   end
 
   version :medium do
-    process resize_to_fill: [150, 150]
+    process resize_to_fill: [170, 170]
   end
 
 end
+
+# User.all.each do |u|
+#   u.photo.recreate_versions! if u.photo.present?
+# end

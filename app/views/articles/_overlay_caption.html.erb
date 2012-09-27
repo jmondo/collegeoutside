@@ -1,4 +1,5 @@
+<% size = "small_cover" if local_assigns[:size].nil? %>
 <%= link_to article_path(article),
-  class: "recent-article-caption recent-article-caption-bottom" do %>
+  class: "recent-article-caption recent-article-caption-bottom recent-article-caption-bottom-#{size}" do %>
   <%= article.cover_photo_caption %>
 <% end %>
