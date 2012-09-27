@@ -46,8 +46,20 @@
       <div class="row footer-bar">
         <div class='span4 footer-box footer-box-centered'><%= link_to image_tag('logo.png'), '/', class: "logo-medium" %></div>
         <div class='span4 footer-box footer-box-centered footer-box-vertical-center'>
-          <%= link_to "Write for Your School", contribute_path %> <br />
-          <%= link_to "Start a CO Branch", contribute_path %>
+          <% if can? :access, :rails_admin %>
+            <%= link_to "Admin Dashboard", rails_admin_path %> <br />
+          <% end %>
+
+          <% if can? :show, :writer_dashboard %>
+            <%= link_to "Writer Dashboard", write_path %> <br />
+          <% end %>
+          <% if current_user %>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Write for Your School", contribute_path %> <br />
+            <%= link_to "Start a CO Branch", contribute_path %> <br />
+            <%= link_to "Sign in", new_user_session_path %>
+          <% end %>
         </div>
         <div class='span2 footer-box'>
           <%= link_to "Our Story", about_us_path %><br />
@@ -61,21 +73,7 @@
         </div>
       </div>
       <div class="span12">
-        <ul>
-          <% if current_user %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
 
-          <% if can? :access, :rails_admin %>
-            <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
-          <% end %>
-
-          <% if can? :show, :writer_dashboard %>
-            <li><%= link_to "Writer Dashboard", write_path %></li>
-          <% end %>
-        </ul>
       </div>
     </div>
 
