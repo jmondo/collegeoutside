@@ -1,7 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 
 
-@import "twitter/bootstrap/responsive";
+// @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
@@ -15,6 +15,8 @@
 @fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
 @fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
 
+@gridColumnWidth: 70px;
+@gridGutterWidth: 30px;
 // Font Awesome
 @import "fontawesome";
 
@@ -33,54 +35,3 @@ body {
   margin: 20px 0 0 0;
 }
 
-/* Special grid styles
--------------------------------------------------- */
-.show-grid {
-  margin-bottom: 20px;
-}
-.show-grid [class*="span"] {
-  background-color: #eee;
-  text-align: center;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-  min-height: 200px;
-  line-height: 200px;
-  &.height-half {
-    min-height: 100px;
-    line-height: 100px;
-  }
-  &.height2 {
-    min-height: 400px;
-    line-height: 400px;
-  }
-  &.height3 {
-    min-height: 600px;
-    line-height: 600px;
-  }
-}
-.show-grid .span-parent {
-  background-color: transparent;
-  text-align: center;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-  min-height: 200px;
-  line-height: 200px;
-}
-.show-grid:hover [class*="span"] {
-  background: #ddd;
-}
-.show-grid:hover .span-parent {
-  background: transparent;
-}
-.navigation {
-  font-size: 1.5em;
-}
-
-.dark {
-  background-color: #aaa;
-}
-.light {
-  background-color: #eee;
-}
