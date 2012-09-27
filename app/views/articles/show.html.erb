@@ -39,14 +39,14 @@
 
     <div class="span3 span-gray">
       <div class="pad-box">
-        <h4 class="header-padded">More from <%= @article.user.name %></h4>
+        <h4 class="header-padded">More from <%= link_to @article.user.name, writer_articles_path(@article.user) %></h4>
         <ul>
           <% recent_articles_by_user.each do |article| %>
             <li><%= link_to article.title, article %></li>
           <% end %>
         </ul>
 
-        <h4 class="header-padded">More from <%= @article.school.name %></h4>
+        <h4 class="header-padded">More from <%= link_to @article.school.name, school_articles_path(@article.school) %></h4>
         <ul>
           <% recent_articles_by_school.each do |article| %>
             <li><%= link_to article.title, article %></li>
