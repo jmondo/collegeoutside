@@ -50,5 +50,3 @@ end
 ].each do |region|
   Region.find_or_create_by_name!(region)
 end
-
-Importer::DataImporter.import_author_emails
