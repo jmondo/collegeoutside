@@ -7,6 +7,6 @@ module SocialMediaIconHelper
   }.with_indifferent_access
 
   def social_media_icon(network)
-    link_to image_tag("social/#{network}_32.png"), LINKS[network], class: "social-media-button"
+    link_to image_tag("social/#{network}_32.png"), LINKS[network], target: '_blank', class: "social-media-button"
   end
 end
