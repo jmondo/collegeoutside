@@ -8,7 +8,7 @@ class HomeArticlesController < ApplicationController
   protected
 
   def end_of_association_chain
-    super.published_no_flags
+    super.published
   end
 
   def search
@@ -16,6 +16,8 @@ class HomeArticlesController < ApplicationController
   end
 
   def collection
-    @articles ||= search.result.page(params[:page]).per(6)
+    featured = search.result.featured.limit(2)
+    normal = search.result.not_featured.limit(6-featured.count)
+    @articles ||= featured + normal
   end
 end
