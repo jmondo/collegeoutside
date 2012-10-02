@@ -38,8 +38,8 @@
           <%= render 'articles/overlay_caption', article: thumbnail_articles[1] %>
         </div>
       <% end %>
-      <% if thumbnail_articles[2..5].present? %>
-        <% thumbnail_articles[2..5].each do |article| %>
+      <% if thumbnail_articles[2..-1].present? %>
+        <% thumbnail_articles[2..-1].each do |article| %>
           <div class="span3 recent-article-thumb">
             <%= render 'articles/article', article: article %>
             <%= render 'articles/overlay_caption', article: article %>
@@ -75,7 +75,7 @@
   </div>
   <div class="span3 span-gray">
     <div class="pad-box">
-      <h4 class="header-padded">All Articles</h4>
+      <h4 class="header-padded">More Articles</h4>
       <ul>
         <% collection.each do |article| %>
           <li><%= link_to article.title, article %></li>
