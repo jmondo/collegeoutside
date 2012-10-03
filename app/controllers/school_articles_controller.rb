@@ -31,7 +31,7 @@ class SchoolArticlesController < ApplicationController
   end
 
   def writers
-    @writers ||= parent.users.order(:articles_count).reverse_order
+    @writers ||= parent.users.accepted_invitation.order(:articles_count).reverse_order
   end
 
 end

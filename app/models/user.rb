@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  scope :accepted_invitation, where(arel_table[:invitation_accepted_at].not_eq(nil))
+
   mount_uploader :photo, ProfilePhotoUploader
 
   extend FriendlyId
