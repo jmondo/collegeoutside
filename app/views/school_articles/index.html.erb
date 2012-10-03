@@ -66,7 +66,7 @@
             <% if u.position.present? %>
               <%= u.position %> <br />
             <% end %>
-            <%= mail_to u.email, nil, encode: 'javascript' %> <br />
+            <%= mail_to u.email, 'Email me!', encode: 'javascript' %> <br />
             <%= pluralize u.articles_count, 'articles' %>
           </div>
         </div>
