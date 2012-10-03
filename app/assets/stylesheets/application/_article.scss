@@ -35,9 +35,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(255,255,255,0.3);
-  padding: 165px 10px 10px 10px;
-  font-weight: bold;
+  background-color: rgba(255,255,255,0.2);
+  background-image: url(image-path('white.png'));
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+  font-weight: 500;
+  padding: 155px 10px 20px 10px;
   width: 100%;
 }
 
@@ -48,6 +52,7 @@
 .recent-article-caption-bottom:hover {
   background-color: transparent;
   color: transparent;
+  background-image: none;
 }
 
 .recent-article-thumb-no-container {
