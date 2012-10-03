@@ -30,6 +30,7 @@ Collegeoutside::Application.routes.draw do
   get 'contact_us', controller: 'pages'
   get 'contribute', controller: 'pages', action: 'contact_us'
   get 'terms', controller: 'pages'
+  get 'instagram', controller: 'pages'
 
   root to: 'home_articles#index'
 end
