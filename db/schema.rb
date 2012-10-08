@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926213434) do
+ActiveRecord::Schema.define(:version => 20121008023323) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(:version => 20120926213434) do
     t.integer  "school_id"
     t.string   "position"
     t.string   "photo"
-    t.integer  "articles_count"
+    t.integer  "articles_count",                       :default => 0,      :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
