@@ -30,7 +30,7 @@
           </div>
           <div class="span2 header-nav-link"><%= link_to "Our Story", about_us_path %></div>
           <div class="span2 header-nav-link"><%= link_to "All Articles", articles_path %></div>
-          <div class="span2 header-nav-link"><%= link_to "Contribute", contribute_path %></div>
+          <div class="span2 header-nav-link"><%= link_to "Contribute Content", contribute_path %></div>
         </div>
       </div>
       <%= render 'layouts/flashes' %>
@@ -62,7 +62,7 @@
           <% if current_user %>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %><br />
           <% else %>
-            <%= link_to "Contribute", contribute_path %> <br />
+            <%= link_to "Contribute Content", contribute_path %> <br />
             <%= link_to "Sign in", new_user_session_path %><br />
           <% end %>
 
