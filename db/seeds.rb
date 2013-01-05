@@ -46,7 +46,8 @@ end
   "southwest",
   "midwest",
   "southeast",
-  "northeast"
+  "northeast",
+  "anywhere"
 ].each do |region|
   Region.find_or_create_by_name!(region)
 end
