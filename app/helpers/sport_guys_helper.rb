@@ -1,11 +1,11 @@
 module SportGuysHelper
   def sport_guy_link(activity_name)
-    new_params = params.merge({activities_name_eq: activity_name})
+    new_params = params.merge({activity: activity_name})
     link_to(sport_guy(activity_name), new_params)
   end
 
   def sport_guy(activity_name)
-    active = (params[:activities_name_eq] == activity_name)
+    active = (params[:activity] == activity_name)
     activity_name = activity_name.capitalize
     content_tag(:div, class: "sport-guy") do
       image_tag("sport-icons/#{activity_name}-Badge_Small.png", alt: "#{activity_name} Sport Badge") +

@@ -12,7 +12,10 @@ class HomeArticlesController < ApplicationController
   end
 
   def search
-    end_of_association_chain.search(params)
+    search_params = {}
+    search_params[:region_name_in] = [params[:region], 'anywhere'] if params[:region]
+    search_params[:activities_name_eq] = params[:activity] if params[:activity]
+    end_of_association_chain.search(search_params)
   end
 
   def collection
