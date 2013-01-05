@@ -6,7 +6,7 @@ module SportGuysHelper
 
   def sport_guy(activity_name)
     active = (params[:activities_name_eq] == activity_name)
-    activity_name = activity_name.titleize
+    activity_name = activity_name.capitalize
     content_tag(:div, class: "sport-guy") do
       image_tag("sport-icons/#{activity_name}-Badge_Small.png", alt: "#{activity_name} Sport Badge") +
         (active ? "" : content_tag(:div, "", class: "sport-guy-opacity"))
@@ -14,9 +14,9 @@ module SportGuysHelper
   end
 
   def mini_sport_guy(activity_name)
-    activity_name = activity_name.titleize
+    activity_name_cap = activity_name.capitalize
     content_tag(:div, class: "sport-guy sport-guy-mini") do
-      image_tag("sport-icons/#{activity_name}-Badge_Small.png", alt: "#{activity_name} Sport Badge")
+      link_to image_tag("sport-icons/#{activity_name_cap}-Badge_Small.png", alt: "#{activity_name_cap} Sport Badge"), activity_articles_path(activity_name)
     end
   end
 end
