@@ -17,6 +17,9 @@ class Article < ActiveRecord::Base
 
   mount_uploader :cover_photo, CoverPhotoUploader
 
+  include Gmaps4rails::ActsAsGmappable
+  acts_as_gmappable :check_process => false, :address => "geolocation"
+
   attr_accessor :editing_user
 
   validates_presence_of :school_id, :user_id, :body, :title, :seasons,
@@ -42,8 +45,8 @@ class Article < ActiveRecord::Base
     self.class.activity_sponsors(activities)
   end
 
-  def text_preview
-    Sanitize.clean(body.truncate(950), Sanitize::Config::RESTRICTED)
+  def text_preview(chars = 950)
+    Sanitize.clean(body.truncate(chars), Sanitize::Config::RESTRICTED)
   end
 
   class << self

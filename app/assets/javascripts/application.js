@@ -15,5 +15,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require underscore
+//= require_tree ./gmaps4rails/
 //= require_tree ./application/
 

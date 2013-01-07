@@ -73,6 +73,7 @@
 
 
     <%= javascript_include_tag "application" %>
+    <%= yield :scripts %>
     <%= render 'layouts/google_analytics' %>
     <%= yield(:extra_footer) %>
   </body>

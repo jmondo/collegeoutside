@@ -15,6 +15,7 @@ Collegeoutside::Application.routes.draw do
     get 'school'
     get 'author'
     get 'article'
+    get 'map'
   end
 
   resources :articles, only: [:index, :show]

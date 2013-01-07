@@ -34,6 +34,7 @@ gem 'stamp'
 gem 'friendly_id'
 gem 'sanitize'
 gem 'ransack'
+gem 'gmaps4rails'
 
 group :development do
   gem 'rspec-rails'
