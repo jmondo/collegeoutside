@@ -1,6 +1,6 @@
 require 'carrierwave/orm/activerecord'
 class Article < ActiveRecord::Base
-  ACCESSIBLE_ATTRS = [:body, :region_id, :school_id, :state_id, :title,
+  ACCESSIBLE_ATTRS = [:body, :region_id, :school_id, :state_id, :title, :geolocation,
     :season_ids, :activity_ids, :cover_photo, :cover_photo_caption, :cover_photo_cache]
   attr_accessible *ACCESSIBLE_ATTRS, as: :writer
   attr_accessible *ACCESSIBLE_ATTRS,

@@ -98,6 +98,7 @@ RailsAdmin.config do |config|
       field :published_at
       field :cover_photo
       field :cover_photo_caption
+      field :geolocation
     end
     create do; end
     update do; end

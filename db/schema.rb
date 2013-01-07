@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107013700) do
+ActiveRecord::Schema.define(:version => 20130107050147) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130107013700) do
     t.string   "cover_photo"
     t.string   "cover_photo_caption"
     t.string   "slug"
+    t.string   "geolocation"
   end
 
   add_index "articles", ["published_at"], :name => "index_articles_on_published_at"
