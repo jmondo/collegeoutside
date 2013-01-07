@@ -27,6 +27,7 @@ Collegeoutside::Application.routes.draw do
   resources :writers, only: [] do
     resources :articles, only: [:index], controller: 'writer_articles'
   end
+  resources :events, only: :index
 
   get 'team', controller: 'pages'
   get 'about_us', controller: 'pages'
