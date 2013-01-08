@@ -1,0 +1,14 @@
+@import "variables";
+
+.map_thumbnail {
+  margin: 5px;
+}
+
+.map_thumbnail_image {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.map_container, .gmaps4rails_map {
+  height: 600px;
+  width: 1155px;
+}

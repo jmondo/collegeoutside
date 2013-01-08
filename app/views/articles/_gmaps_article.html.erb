@@ -1,3 +1,5 @@
 <h4><%= link_to article.title, article %></h4>
-
-<%= article.text_preview(900) %>
+<p class="map_thumbnail">
+  <%= map_thumbnail(article) %>
+  <%= article.text_preview.html_safe %>
+</p>
