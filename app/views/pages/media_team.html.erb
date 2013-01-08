@@ -1,0 +1,15 @@
+<div class="row row-pad-bottom">
+  <div class="span12 center">
+    <h1>Media Team</h1>
+    <p>our writers, photographers, and videographers</p>
+  </div>
+</div>
+<div class="row row-pad-bottom">
+  <% User.accepted_invitation.each do |writer| %>
+    <div class="span4 span-gray">
+      <div class="pad-box">
+        <%= render 'writers/writer', writer: writer %>
+      </div>
+    </div>
+  <% end %>
+</div>

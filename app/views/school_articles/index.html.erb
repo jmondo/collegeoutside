@@ -57,19 +57,7 @@
       <% end %>
       <h4 class="header-padded">All Writers</h4>
       <% writers.each do |u| %>
-        <div class="writer">
-          <div class="writer-image">
-            <%= link_to image_tag(u.photo.thumb), writer_articles_path(u) %>
-          </div>
-          <div class="writer-snippet">
-            <%= link_to u.name, writer_articles_path(u) %><br />
-            <% if u.position.present? %>
-              <%= u.position %> <br />
-            <% end %>
-            <%= mail_to u.email, 'Email me!', encode: 'javascript' %> <br />
-            <%= pluralize u.articles_count, 'articles' %>
-          </div>
-        </div>
+        <%= render 'writers/writer', writer: u %>
       <% end %>
     </div>
   </div>
