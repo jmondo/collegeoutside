@@ -1,9 +1,12 @@
 <div class="row content">
-  <div class="span12 row-pad-bottom">
-    <h1>Outing Club Events</h1>
+  <div class="span12">
+    <h1>Outing Club Events</h1> <br />
   </div>
   <div class="span9">
-    <iframe src="https://www.google.com/calendar/embed?title=%20&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=admin%40collegeoutside.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="870" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=450&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=admin%40collegeoutside.com&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="870" height="450" frameborder="0" scrolling="no"></iframe>
+    <br />
+    <%= sponsor_link('osprey', 'osprey.jpeg', 'http://ospreypacks.com/') %>
+    <%= sponsor_link('amc', 'amc.jpeg', 'http://www.outdoors.org/') %>
   </div>
   <div class="span3 span-gray">
     <div class="pad-box">
@@ -11,12 +14,6 @@
       <% wanted_items.each do |item| %>
         <%= link_to item.school.name, school_articles_path(item.school) %> <%= item.description %><br />
       <% end %>
-    </div>
-  </div>
-  <div class="span3 span-gray">
-    <div class="pad-box">
-      <h4>Event Sponsors</h4><br />
-      <%= sponsor_image('osprey.jpeg') %>
     </div>
   </div>
 </div>
