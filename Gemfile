@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.11'
 
 gem 'pg'
 
@@ -31,7 +31,7 @@ gem 'redactor-rails' # using only for upload engine
 gem 'fog'
 gem 'hpricot'
 gem 'stamp'
-gem 'friendly_id'
+gem 'friendly_id', '~>4.0.9'
 gem 'sanitize'
 gem 'ransack'
 gem 'gmaps4rails'
