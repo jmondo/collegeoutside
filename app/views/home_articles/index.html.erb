@@ -25,6 +25,10 @@
       <% else %>
         <div class="span6 recent-article-thumb"><p>Derp. We don't have any articles to show you here. Maybe you should <%= link_to "write some", contribute_path %>?</p></div>
       <% end %>
+      <div class="span6 recent-article-thumb"><p>
+        <%= link_to "clear filters", "/" %> |
+        <%= link_to "all articles", articles_path %>
+      </p></div>
     </div>
 
   </div>
