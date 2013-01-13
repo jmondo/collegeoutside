@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   # collection stuff
   def collection
-    @articles ||= end_of_association_chain.published_no_flags.page(params[:page]).per(20)
+    @articles ||= end_of_association_chain.published_no_flags.page(params[:page]).per(28)
   end
 
   def featured_article
