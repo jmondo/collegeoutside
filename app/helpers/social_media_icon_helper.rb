@@ -4,7 +4,8 @@ module SocialMediaIconHelper
     twitter: 'http://twitter.com/collegeoutside',
     linkedin: 'http://linkedin.com/company/2433460',
     vimeo: 'http://vimeo.com/collegeoutside',
-    instagram: '/instagram'
+    instagram: '/instagram',
+    pinterest: 'http://pinterest.com/collegeoutside/'
   }.with_indifferent_access
 
   def social_media_icon(network)
