@@ -31,6 +31,9 @@ class Article < ActiveRecord::Base
   scope :published, where(arel_table[:published_at].not_eq(nil)).
     order(:published_at).reverse_order
 
+  scope :not_published, where(arel_table[:published_at].eq(nil)).
+    order(:published_at).reverse_order
+
   scope :not_featured, where(arel_table[:featured].eq(false))
   scope :not_sponsored, where(arel_table[:sponsored].eq(false))
 

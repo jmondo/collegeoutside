@@ -1,8 +1,16 @@
 <h1>Drafts</h1>
 <br />
 <ul>
-  <% @articles.each do |article| %>
+  <% @articles.not_published.each do |article| %>
     <li><%= link_to article.title, [:write, article] %></li>
+  <% end %>
+</ul>
+
+<h1>Published</h1>
+<br />
+<ul>
+  <% @articles.published.each do |article| %>
+    <li><%= link_to article.title, article %></li>
   <% end %>
 </ul>
 
