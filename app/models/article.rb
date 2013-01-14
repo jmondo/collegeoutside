@@ -18,12 +18,15 @@ class Article < ActiveRecord::Base
   mount_uploader :cover_photo, CoverPhotoUploader
 
   include Gmaps4rails::ActsAsGmappable
-  acts_as_gmappable :check_process => false, :address => "geolocation"
+  acts_as_gmappable :check_process => false,
+    :address => "geolocation",
+    :process_geocoding => proc{|obj| obj.geolocation.present? }
 
   attr_accessor :editing_user
 
-  validates_presence_of :school_id, :user_id, :body, :title, :seasons,
+  validates_presence_of :user_id, :body, :title, :seasons,
     :activities, :cover_photo, :cover_photo_caption
+
   validates_inclusion_of :featured, :sponsored, in: [true, false]
 
   before_validation :set_editing_user_as_author, on: :create

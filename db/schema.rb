@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130107053333) do
+ActiveRecord::Schema.define(:version => 20130114034536) do
 
   create_table "activities", :force => true do |t|
     t.string   "name",       :null => false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130107053333) do
     t.string   "title",                                  :null => false
     t.integer  "region_id"
     t.integer  "state_id"
-    t.integer  "school_id",                              :null => false
+    t.integer  "school_id"
     t.boolean  "featured",            :default => false, :null => false
     t.boolean  "sponsored",           :default => false, :null => false
     t.datetime "published_at"
