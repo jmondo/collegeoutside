@@ -4,71 +4,27 @@
   </div>
 </div>
 <div class="row">
-  <div class="span9">
-    <div class="row">
-      <div class="span9 span-gray">
-        <% if (featured_article = thumbnail_articles[0]).present? %>
-          <div class="span4 recent-article-thumb recent-article-thumb-no-container">
-            <%= render 'articles/article', article: featured_article, size: 'medium_cover' %>
-          </div>
-          <div class="span5 article-preview-container">
-            <h3><%= featured_article.title %></h3>
-            <h4 class="header-gray">
-              <%= featured_article.user.name %>,
-              <%= featured_article.school.name %>,
-              <%= featured_article.published_at.stamp("January 23, 2011") %>
-            </h4>
-            <div class="span-elipsis article-preview">
-              <%= featured_article.text_preview.html_safe %>
-            </div>
-            <%= link_to "Read more", featured_article, class: "article-preview-read-more" %>
-          </div>
-        <% else %>
-          <div class="pad-box">
-            <p>We don't have any featured articles to show you</p>
-          </div>
-        <% end %>
-      </div>
-
-    </div>
-    <div class="row">
-      <% if (sponsored_article = thumbnail_articles[1]).present? %>
-        <div class="span6 recent-article-thumb">
-          <%= render 'articles/article', article: thumbnail_articles[1], size: 'double_wide_cover' %>
-          <%= render 'articles/overlay_caption', article: thumbnail_articles[1] %>
-        </div>
-      <% end %>
-      <% if thumbnail_articles[2..-1].present? %>
-        <% thumbnail_articles[2..-1].each do |article| %>
-          <div class="span3 recent-article-thumb">
-            <%= render 'articles/article', article: article %>
-            <%= render 'articles/overlay_caption', article: article %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="span3 span-gray row-pad-bottom">
+  <div class="span6 span-gray row-pad-bottom">
     <div class="pad-box">
       <% if @school.contact_html.present? %>
-        <h4 class="header-padded">Contact <%= @school.name %></h4>
         <%= @school.contact_html.html_safe %>
-        <hr />
-      <% end %>
-      <h4 class="header-padded">All Writers</h4>
-      <% writers.each do |u| %>
-        <%= render 'writers/writer', writer: u %>
       <% end %>
     </div>
   </div>
-  <div class="span3 span-gray">
+  <div class="span6 span-gray row-pad-bottom">
     <div class="pad-box">
-      <h4 class="header-padded">More Articles</h4>
-      <ul>
-        <% collection.each do |article| %>
-          <li><%= link_to article.title, article %></li>
-        <% end %>
-      </ul>
+      <h4>Adventure Map</h4>
+      <%= gmaps( :map_options => { :container_class => "school-adventure-map"}, :markers => { "data" => map_json } ) %>
     </div>
   </div>
+</div>
+<div class="row">
+  <% if collection.present? %>
+    <% collection.each do |article| %>
+      <div class="span3 recent-article-thumb">
+        <%= render 'articles/article', article: article %>
+        <%= render 'articles/overlay_caption', article: article %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
