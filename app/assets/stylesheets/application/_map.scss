@@ -9,15 +9,12 @@
   margin-bottom: 10px;
   height: 100px;
 }
-.map_container {
+.map_container, .map_container .gmaps4rails_map {
   height: 600px;
   width: 1155px;
 }
-.gmaps4rails_map {
-  width: 100%;
-}
 
-.school-adventure-map {
+.school-adventure-map, .school-adventure-map .gmaps4rails_map {
   width: 530px;
   height: 350px;
 }

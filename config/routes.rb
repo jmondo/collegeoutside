@@ -15,7 +15,6 @@ Collegeoutside::Application.routes.draw do
     get 'school'
     get 'author'
     get 'article'
-    get 'map'
   end
 
   resources :articles, only: [:index, :show]
@@ -37,6 +36,7 @@ Collegeoutside::Application.routes.draw do
   get 'terms', controller: 'pages'
   get 'instagram', controller: 'pages'
   get 'media_team', controller: 'pages'
+  get 'map', controller: 'pages'
 
   root to: 'home_articles#index'
 end
