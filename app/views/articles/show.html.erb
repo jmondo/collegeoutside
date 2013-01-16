@@ -11,9 +11,7 @@
         </div>
         <h1><%= @article.title %></h1>
         <h3 class="header-gray">
-          <%= link_to @article.user.name, writer_articles_path(@article.user), class: 'link-incognito' %>,
-          <%= link_to @article.school.try(:name), school_articles_path(@article.school), class: 'link-incognito' %>,
-          <%= @article.published_at.stamp("January 23, 2011") %>
+          <%= additional_article_header(@article) %>
         </h3>
         <% if can? :access, :rails_admin %>
           <%= link_to 'edit', "/admin/article/#{@article.id}/edit" %>
