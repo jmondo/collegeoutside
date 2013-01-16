@@ -14,9 +14,9 @@
           <div class="span5 article-preview-container">
             <h3><%= featured_article.title %></h3>
             <h4 class="header-gray">
-              <%= featured_article.user.name %>,
-              <%= featured_article.school.name %>,
-              <%= featured_article.published_at.stamp("January 23, 2011") %>
+              <%= [featured_article.user.name,
+                featured_article.school.try(:name),
+                featured_article.published_at.stamp("January 23, 2011")].compact.join(', ') %>
             </h4>
             <div class="span-elipsis article-preview">
               <%= featured_article.text_preview.html_safe %>
