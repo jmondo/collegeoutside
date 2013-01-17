@@ -34,7 +34,8 @@ class Article < ActiveRecord::Base
   scope :published, proc{where(arel_table[:published_at].lteq(Time.current)).
     order(:published_at).reverse_order}
 
-  scope :not_published, proc{where(!arel_table[:published_at].gteq(Time.current)).
+  scope :not_published, proc{where(arel_table[:published_at].gt(Time.current).
+    or(arel_table[:published_at].eq(nil))).
     order(:published_at).reverse_order}
 
   scope :not_featured, where(arel_table[:featured].eq(false))
