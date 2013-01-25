@@ -8,7 +8,7 @@ class HomeArticlesController < ApplicationController
   protected
 
   def end_of_association_chain
-    super.published
+    super.published.no_school
   end
 
   def search

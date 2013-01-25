@@ -26,7 +26,7 @@ class ActivityArticlesController < ApplicationController
   end
 
   def collection
-    @articles ||= end_of_association_chain.published_no_flags
+    @articles ||= end_of_association_chain.published_no_flags.no_school
   end
 
 end

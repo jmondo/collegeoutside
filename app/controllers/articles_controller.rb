@@ -6,16 +6,17 @@ class ArticlesController < ApplicationController
   protected
 
   # collection stuff
+
   def collection
-    @articles ||= end_of_association_chain.published_no_flags.page(params[:page]).per(28)
+    @articles ||= end_of_association_chain.no_school.published_no_flags.page(params[:page]).per(28)
   end
 
   def featured_article
-    @featured_articles ||= end_of_association_chain.featured.page(params[:page]).per(1).first
+    @featured_articles ||= end_of_association_chain.no_school.featured.page(params[:page]).per(1).first
   end
 
   def sponsored_article
-    @sponsored_articles ||= end_of_association_chain.sponsored.page(params[:page]).per(1).first
+    @sponsored_articles ||= end_of_association_chain.no_school.sponsored.page(params[:page]).per(1).first
   end
 
   # resource stuff

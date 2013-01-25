@@ -44,6 +44,7 @@ class Article < ActiveRecord::Base
   scope :published_no_flags, published.not_featured.not_sponsored
   scope :sponsored, where(arel_table[:sponsored].eq(true)).published
   scope :featured, where(arel_table[:featured].eq(true)).published
+  scope :no_school, where(school_id: nil)
 
   extend FriendlyId
   friendly_id :title, use: :slugged
