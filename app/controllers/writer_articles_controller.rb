@@ -11,7 +11,7 @@ class WriterArticlesController < ApplicationController
   protected
 
   def collection
-    @articles ||= end_of_association_chain.published.no_school.page(params[:page]).per(6)
+    @articles ||= end_of_association_chain.published.page(params[:page]).per(6)
   end
 
 end
