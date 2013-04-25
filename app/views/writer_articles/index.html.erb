@@ -1,6 +1,6 @@
 <div class="row row-pad-bottom">
   <div class="span12 center">
-    <%= render 'schools/header', school: @user.school %>
+    <%= render 'schools/header', school: @user.school if @user.school %>
   </div>
 </div>
 <div class="row row-pad-bottom">

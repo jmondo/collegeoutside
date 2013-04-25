@@ -17,9 +17,6 @@ class User < ActiveRecord::Base
 
   validates_inclusion_of :role, in: ROLES
 
-  validates_presence_of :school, :name,
-    if: proc{ |u| u.role != "chief" }
-
   # validate photo on update unless chief, do not validate on create
   # so that admin can create the user, but when they set their password they must set photo
   validates_presence_of :photo,
