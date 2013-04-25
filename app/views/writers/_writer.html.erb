@@ -4,8 +4,8 @@
   </div>
   <div class="writer-snippet">
     <%= link_to writer.name, writer_articles_path(writer) %><br />
-    <% if writer.position.present? %>
-      <%= writer.school.name %> <%= writer.position %> <br />
+    <% if writer.position.present? || writer.school.present? %>
+      <%= writer.school.try(:name) %> <%= writer.position %> <br />
     <% end %>
     <%= mail_to writer.email, 'Email me!', encode: 'javascript' %> <br />
     <%= pluralize writer.articles_count, 'articles' %>
