@@ -61,6 +61,10 @@ class User < ActiveRecord::Base
     activities.select('activities.name').group('activities.name')
   end
 
+  def description
+    [name, position].reject(&:blank?).join(', ')
+  end
+
   protected
 
   def send_invitation
