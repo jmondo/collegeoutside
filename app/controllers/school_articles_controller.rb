@@ -11,7 +11,7 @@ class SchoolArticlesController < ApplicationController
   protected
 
   def collection
-    @articles ||= end_of_association_chain.published.limit(8)
+    @articles ||= end_of_association_chain.published.page(params[:page]).per(32)
   end
 
   def map_json
