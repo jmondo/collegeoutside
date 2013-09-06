@@ -3,6 +3,8 @@ Collegeoutside::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  match "/events", :to => redirect("https://collegegetoutsideweekend.eventbrite.com")
+
   devise_for :users
 
   match 'write' => 'write/articles#index'
